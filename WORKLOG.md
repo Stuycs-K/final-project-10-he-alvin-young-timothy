@@ -1,22 +1,23 @@
 # Work Log
 
-## GROUP MEMBER 1
+## GROUP MEMBER 1: Alvin He
 
-### date x
+### 2024-05-22
+CW: filled out base project files, experimented with stegsolve filters/planes, wrote on research doc about possible ideas,
 
-info
+HW:
 
 ### date y
 
 info
 
 
-## GROUP MEMBER 2
+## GROUP MEMBER 2: Timothy Young
 
-### date x
-
-info
-
+### 2024-05-22
+CW:
+https://docs.google.com/document/d/1Ri0hZbu2rtx6ZwQ28m5dbygn8d74uzrXJdrPIha-EJ0/edit?usp=sharing
+HW:
 ### date y
 
 info
