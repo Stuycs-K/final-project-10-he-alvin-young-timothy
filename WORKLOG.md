@@ -7,7 +7,7 @@ CW: filled out base project files, experimented with stegsolve filters/planes, w
 
 HW: researched more about stegsolve planes and filters, added to the doc about color channels and how they are used by stegsolve
 
-### date y
+### 2024-05-23
 CW: tested more with stegsolve, ran multiple images to learn the differences in plane from 0-7, brainstormed more encode ideas, made processing file and tested
 
 HW:
