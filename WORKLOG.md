@@ -5,7 +5,7 @@
 ### 2024-05-22
 CW: filled out base project files, experimented with stegsolve filters/planes, wrote on research doc about possible ideas,
 
-HW:
+HW: researched more about stegsolve planes and filters, added to the doc about color channels and how they are used by stegsolve
 
 ### date y
 
