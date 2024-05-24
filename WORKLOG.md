@@ -16,9 +16,10 @@ HW:
 ## GROUP MEMBER 2: Timothy Young
 
 ### 2024-05-22
-CW:
-https://docs.google.com/document/d/1Ri0hZbu2rtx6ZwQ28m5dbygn8d74uzrXJdrPIha-EJ0/edit?usp=sharing
+CW: https://docs.google.com/document/d/1Ri0hZbu2rtx6ZwQ28m5dbygn8d74uzrXJdrPIha-EJ0/edit?usp=sharing
 HW:
-### date y
+### 2024-05-22
+CW: Brainstormed more encode ideas, delved deeper into how we would implement our suggested ideas, listing pros and cons of each method.
+HW: Researched how stegsolve decodes images, researched and tested the implementation of a kernel map in order to create color filters and apply/revert Gaussian blur.  
 
 info
