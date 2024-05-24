@@ -12,6 +12,11 @@ CW: tested more with stegsolve, ran multiple images to learn the differences in 
 
 HW: Ran more tests on different images, reviewed stegsolve page
 
+### 2024-05-24
+CW: tested more with stegsolve and an encoded image, started coding very small differences into images using hex
+
+HW: 
+
 
 ## GROUP MEMBER 2: Timothy Young
 
