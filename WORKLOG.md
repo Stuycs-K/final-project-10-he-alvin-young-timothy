@@ -10,7 +10,7 @@ HW: researched more about stegsolve planes and filters, added to the doc about c
 ### 2024-05-23
 CW: tested more with stegsolve, ran multiple images to learn the differences in plane from 0-7, brainstormed more encode ideas, made processing file and tested
 
-HW:
+HW: Ran more tests on different images, reviewed stegsolve page
 
 
 ## GROUP MEMBER 2: Timothy Young
