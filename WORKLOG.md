@@ -15,7 +15,7 @@ HW: Ran more tests on different images, reviewed stegsolve page
 ### 2024-05-24
 CW: tested more with stegsolve and an encoded image, started coding very small differences into images using hex
 
-HW: 
+HW: got the blue plane 0 and 1 working for stegsolve on dark.png, need to start reversing the process to decode;
 
 
 ## GROUP MEMBER 2: Timothy Young
