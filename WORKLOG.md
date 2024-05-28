@@ -30,5 +30,6 @@ HW: Researched how stegsolve decodes images, researched and tested the implement
 
 ### 2024-05-24
 CW: tested stegsolve with xor command, working in a seperate doc until I confirm it works and I'll transfer it over
+HW: got xor to work, had a few problems with certain images. Researched canny edge detection and added to doc
 
 info
