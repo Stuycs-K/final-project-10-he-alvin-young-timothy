@@ -75,6 +75,8 @@ int[] messageArr(PImage img, String message) {
   return arr;
 }
 
+
+//maybe I can make a generalized method to do different things based on the mode 
 PImage alphaMode(PImage img, int[]messageArr, PImage final) {
   img.loadPixels();
     int numPix = messageArray.length;
@@ -104,7 +106,7 @@ PImage alphaMode(PImage img, int[]messageArr, PImage final) {
 
 void keyPressed(){
   if (key == ' '){
-    if (MODE == XOR){
+    if (MODE == ALPHAMODE){
       MODE = DEFAULT;
     }
     else{
