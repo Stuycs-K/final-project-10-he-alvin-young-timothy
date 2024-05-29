@@ -38,4 +38,10 @@ HW: Researched how stegsolve decodes images, researched and tested the implement
 CW: tested stegsolve with xor command, working in a seperate doc until I confirm it works and I'll transfer it over
 HW: got xor to work, had a few problems with certain images. Researched canny edge detection and added to doc
 
+
+### 2024-05-28
+CW: Debugging the xor encryption method, fixed some errors but I still had issues by the end of class
+
+HW: Fixed xor method and it should be completely operational, started lsb encryption for alpha mode, but unsure if I will be able to use alpha on a PImage that is initialized with RGB instead of ARGB.
+
 info
