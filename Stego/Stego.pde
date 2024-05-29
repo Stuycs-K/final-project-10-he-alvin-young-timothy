@@ -12,7 +12,8 @@ PImage alphaPic;
 void setup() {
   size(288, 180);
   img1 = loadImage("city.png");
-  img2 = loadImage("apple.png");
+//  img2 = loadImage("apple.png");
+  img2 = loadImage("white.png");
   //println("Width: " + img1.width);
   //println("Height: " + img1.height);
   img1.loadPixels();
@@ -26,6 +27,7 @@ void setup() {
 void draw() {
     // Display the modified image
     image(modified, 0, 0);
+    save("modified.png");
 }
 
 
@@ -77,32 +79,32 @@ int[] messageArr(PImage img, String message) {
 
 
 //maybe I can make a generalized method to do different things based on the mode 
-PImage alphaMode(PImage img, int[]messageArr, PImage final) {
-  img.loadPixels();
-    int numPix = messageArray.length;
-    for(int index = 0; index < numPix; index++) {
-      color c = img.pixels[index];
-      int codeAlpha = (int) alpha(c);
-      String bin = String.format("%8s", Integer.toBinaryString(codeAlpha)).replaceAll(" ", "0");
-      //System.out.println(bin);
-      String encodedBin = "";
-      if (messageArray[index] == 0) encodedBin = bin.substring(0, 6) + "00";
-      if (messageArray[index] == 1) encodedBin = bin.substring(0, 6) + "01";
-      if (messageArray[index] == 2) encodedBin = bin.substring(0, 6) + "10";
-      if (messageArray[index] == 3) encodedBin = bin.substring(0, 6) + "11";
-      //System.out.println("hi");
+//PImage alphaMode(PImage img, int[]messageArr, PImage final) {
+//  img.loadPixels();
+//    int numPix = messageArray.length;
+//    for(int index = 0; index < numPix; index++) {
+//      color c = img.pixels[index];
+//      int codeAlpha = (int) alpha(c);
+//      String bin = String.format("%8s", Integer.toBinaryString(codeAlpha)).replaceAll(" ", "0");
+//      //System.out.println(bin);
+//      String encodedBin = "";
+//      if (messageArray[index] == 0) encodedBin = bin.substring(0, 6) + "00";
+//      if (messageArray[index] == 1) encodedBin = bin.substring(0, 6) + "01";
+//      if (messageArray[index] == 2) encodedBin = bin.substring(0, 6) + "10";
+//      if (messageArray[index] == 3) encodedBin = bin.substring(0, 6) + "11";
+//      //System.out.println("hi");
 
-      img.pixels[index] = color(unbinary(encodedBin), red(c), green(c), blue(c));
-    }
-    for(int end = 0; end < 4; end++) {
-      color c = img.pixels[end + numPix];
-      int codeAlpha = (int) alpha(c);
-      String bin = String.format("%8s", Integer.toBinaryString(codeRed)).replaceAll(" ", "0");
-      String endChars = bin.substring(0, 6) + "11";
-      img.pixels[end + numPix] = color(unbinary(endChars), red(c), green(c), blue(c));
-    }
-    img.updatePixels();
-}
+//      img.pixels[index] = color(unbinary(encodedBin), red(c), green(c), blue(c));
+//    }
+//    for(int end = 0; end < 4; end++) {
+//      color c = img.pixels[end + numPix];
+//      int codeAlpha = (int) alpha(c);
+//      String bin = String.format("%8s", Integer.toBinaryString(codeRed)).replaceAll(" ", "0");
+//      String endChars = bin.substring(0, 6) + "11";
+//      img.pixels[end + numPix] = color(unbinary(endChars), red(c), green(c), blue(c));
+//    }
+//    img.updatePixels();
+//}
 
 void keyPressed(){
   if (key == ' '){
