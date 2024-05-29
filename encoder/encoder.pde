@@ -33,8 +33,7 @@ void setup() {
       if (r == 255 && g == 255 && b == 255) {
         img.pixels[i] = color(0);
       } else {
-        // need to fix to encode the red bits to be visible on red plane 0
-        r = (r | 1);
+        r = 1;
         g = 0;
         b = 0;
         img.pixels[i] = color(r, g, b);
@@ -42,10 +41,8 @@ void setup() {
     }
   }
   img.updatePixels();
-
-  save("modified_image.png");
 }
 void draw() {
-  // Display the modified image
   image(img, 0, 0);
+  save("modified.png");
 }

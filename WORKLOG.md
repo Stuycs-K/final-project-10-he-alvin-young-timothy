@@ -23,7 +23,9 @@ CW: started workign on an encoder for blue plane, reviewed the xor encryption fu
 HW: got blue plane decryption working, created a text-image generator to use to encode, started lsb encryption for red
 
 ### 2024-05-29
-CW: added save file to stego xor function and tested inverted image with stegsolve
+CW: added save file to stego xor function and tested inverted image with stegsolve, tested more with red channel pixel hiding and got stegsolve red plane 0 working
+
+HW: 
 
 
 ## GROUP MEMBER 2: Timothy Young
