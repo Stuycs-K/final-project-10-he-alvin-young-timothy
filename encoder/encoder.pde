@@ -5,8 +5,10 @@ int MODE = ENCODE;
 void setup() {
   //size(866, 268);
   //img = loadImage("dark.png");
-  size(2048, 1536);
-  img = loadImage("scribble.png");
+  //size(2048, 1536);
+  //img = loadImage("scribble.png");
+  size(400, 400);
+  img = loadImage("red_text.png");
   image(img, 0, 0);
   loadPixels();
   if (MODE == DECODE){
@@ -25,22 +27,24 @@ void setup() {
   if (MODE == ENCODE){
     for (int i = 0; i < img.pixels.length; i++) {
       int c = img.pixels[i];
-      int g = (int)green(c);
       int r = (int)red(c);
+      int g = (int)green(c);
       int b = (int)blue(c);
-      // println("r " + r + " " + g + " " + b);
-//      println(b + " " + c);
-      if (r == b && b == g){
-        img.pixels[i] = color(0, 0, 0);
-      }
-      else {
-        img.pixels[i] = color(0, 0, 100);
+      if (r == 255 && g == 255 && b == 255) {
+        img.pixels[i] = color(0);
+      } else {
+        // need to fix to encode the red bits to be visible on red plane 0
+        r = (r | 1);
+        g = 0;
+        b = 0;
+        img.pixels[i] = color(r, g, b);
       }
     }
   }
   img.updatePixels();
-}
 
+  save("modified_image.png");
+}
 void draw() {
   // Display the modified image
   image(img, 0, 0);

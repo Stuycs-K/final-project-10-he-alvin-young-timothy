@@ -18,7 +18,9 @@ CW: tested more with stegsolve and an encoded image, started coding very small d
 HW: got the blue plane 0 and 1 working for stegsolve on dark.png, need to start reversing the process to decode;
 
 ### 2024-05-28
-CW: started workign on an encoder for blue plane
+CW: started workign on an encoder for blue plane, reviewed the xor encryption function
+
+HW: got blue plane decryption working, created a text-image generator to use to encode, started lsb encryption for red
 
 
 
