@@ -48,4 +48,9 @@ CW: Debugging the xor encryption method, fixed some errors but I still had issue
 
 HW: Fixed xor method and it should be completely operational, started lsb encryption for alpha mode, but unsure if I will be able to use alpha on a PImage that is initialized with RGB instead of ARGB.
 
+
+### 2024-05-29
+CW: worked with Alvin to brainstorm the implementation of the red filter for hidden text, which we resolved on Alvin's machine. 
+
+HW: Tested xor implementation with different images/blank PImages, researched further about how to correctly implement alpha mode encryption  in images without alpha channels. 
 info
