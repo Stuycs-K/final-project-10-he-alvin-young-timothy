@@ -1,13 +1,12 @@
 PImage img;
 int ENCODE = 0;
 int DECODE = 1;
-int MODE = ENCODE;
-
 int RED = 0;
 int GREEN = 1;
 int BLUE = 2;
-int COLOR = RED;
 
+int MODE = ENCODE;
+int COLOR = RED;
 int PLANE = 3;
 
 void setup() {
@@ -19,19 +18,19 @@ void setup() {
   img = loadImage("blue_text.png");
   image(img, 0, 0);
   loadPixels();
-  if (MODE == DECODE){
-    for (int i = 0; i < img.pixels.length; i++) {
-      int c = img.pixels[i];
+  //if (MODE == DECODE){
+  //  for (int i = 0; i < img.pixels.length; i++) {
+  //    int c = img.pixels[i];
       
-      // second LSB for dark.png
-      int r = (int)red(c);
-      int g = (int)red(c);
-      int b = ((int)blue(c) >> 1) & 0x01;
+  //    // second LSB for dark.png
+  //    int r = (int)red(c);
+  //    int g = (int)red(c);
+  //    int b = ((int)blue(c) >> 1) & 0x01;
       
-      // outline the blue
-      img.pixels[i] = color(0, 0, b * 255);
-    }
-  }
+  //    // outline the blue
+  //    img.pixels[i] = color(0, 0, b * 255);
+  //  }
+  //}
   if (MODE == ENCODE){
     for (int i = 0; i < img.pixels.length; i++) {
       int c = img.pixels[i];
