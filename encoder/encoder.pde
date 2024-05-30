@@ -2,13 +2,21 @@ PImage img;
 int ENCODE = 0;
 int DECODE = 1;
 int MODE = ENCODE;
+
+int RED = 0;
+int GREEN = 1;
+int BLUE = 2;
+int COLOR = RED;
+
+int PLANE = 3;
+
 void setup() {
   //size(866, 268);
   //img = loadImage("dark.png");
   //size(2048, 1536);
   //img = loadImage("scribble.png");
   size(400, 400);
-  img = loadImage("red_text.png");
+  img = loadImage("blue_text.png");
   image(img, 0, 0);
   loadPixels();
   if (MODE == DECODE){
@@ -32,8 +40,17 @@ void setup() {
       int b = (int)blue(c);
       if (r == 255 && g == 255 && b == 255) {
         img.pixels[i] = color(0);
-      } else {
-        img.pixels[i] = color(0, 0, 2);
+      } 
+      else {
+        if (COLOR == RED){
+          img.pixels[i] = color((int)Math.pow(2,PLANE), 0, 0);
+        }
+        else if (COLOR == GREEN){
+          img.pixels[i] = color(0, (int)Math.pow(2,PLANE), 0);
+        }
+        else if (COLOR == BLUE){
+          img.pixels[i] = color(0, 0, (int)Math.pow(2,PLANE));
+        }
       }
     }
   }

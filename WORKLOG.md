@@ -27,6 +27,8 @@ CW: added save file to stego xor function and tested inverted image with stegsol
 
 HW: ran more tests with green and blue, started working on plane ranges
 
+### 2024-05-29
+CW: got plane encoding working for any plane and color, cleaned up code
 
 ## GROUP MEMBER 2: Timothy Young
 
