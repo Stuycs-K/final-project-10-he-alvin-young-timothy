@@ -25,7 +25,7 @@ HW: got blue plane decryption working, created a text-image generator to use to 
 ### 2024-05-29
 CW: added save file to stego xor function and tested inverted image with stegsolve, tested more with red channel pixel hiding and got stegsolve red plane 0 working
 
-HW: 
+HW: ran more tests with green and blue, started working on plane ranges
 
 
 ## GROUP MEMBER 2: Timothy Young

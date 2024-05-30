@@ -33,10 +33,7 @@ void setup() {
       if (r == 255 && g == 255 && b == 255) {
         img.pixels[i] = color(0);
       } else {
-        r = 1;
-        g = 0;
-        b = 0;
-        img.pixels[i] = color(r, g, b);
+        img.pixels[i] = color(0, 0, 2);
       }
     }
   }
