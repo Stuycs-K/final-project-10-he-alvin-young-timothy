@@ -30,6 +30,8 @@ HW: ran more tests with green and blue, started working on plane ranges
 ### 2024-05-29
 CW: got plane encoding working for any plane and color, cleaned up code
 
+HW: tested out more with the random planes and did more research on the doc, cleaned up the rgb plane encoders
+
 ## GROUP MEMBER 2: Timothy Young
 
 ### 2024-05-22
