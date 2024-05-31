@@ -55,4 +55,10 @@ HW: Fixed xor method and it should be completely operational, started lsb encryp
 CW: worked with Alvin to brainstorm the implementation of the red filter for hidden text, which we resolved on Alvin's machine. 
 
 HW: Tested xor implementation with different images/blank PImages, researched further about how to correctly implement alpha mode encryption  in images without alpha channels. 
+
+### 2024-05-30
+CW + HW: Tested random color filter mode on stegsolve to see if there was a way to isolate messages that only appeared on those channels, or to prevent text meant for red, green, blue or alpha from appearing in the filter.
+
+
+
 info
