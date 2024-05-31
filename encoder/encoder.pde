@@ -31,23 +31,23 @@ void setup() {
   //    img.pixels[i] = color(0, 0, b * 255);
   //  }
   //}
-  if (MODE == ENCODE){
+  if (MODE == ENCODE){ 
     for (int i = 0; i < img.pixels.length; i++) {
       int c = img.pixels[i];
       int r = (int)red(c);
       int g = (int)green(c);
       int b = (int)blue(c);
-      if (r == 255 && g == 255 && b == 255) {
+      if (r == 255 && g == 255 && b == 255) { // if all the r,g,b values = 255(white), then turn the pixel black
         img.pixels[i] = color(0);
       } 
-      else {
-        if (COLOR == RED){
+      else {// the color plane indicates which binary place should be on, so we take the expt of it
+        if (COLOR == RED){ //red mode: if the pixel is not completely white, encode it red
           img.pixels[i] = color((int)Math.pow(2,PLANE), 0, 0);
         }
-        else if (COLOR == GREEN){
+        else if (COLOR == GREEN){// green mode: if the pixel is not completely white, encode it green
           img.pixels[i] = color(0, (int)Math.pow(2,PLANE), 0);
         }
-        else if (COLOR == BLUE){
+        else if (COLOR == BLUE){// blue mode: if the pixel is not completely white, encode it blue
           img.pixels[i] = color(0, 0, (int)Math.pow(2,PLANE));
         }
       }
@@ -55,6 +55,7 @@ void setup() {
   }
   img.updatePixels();
 }
+
 void draw() {
   image(img, 0, 0);
   save("modified.png");

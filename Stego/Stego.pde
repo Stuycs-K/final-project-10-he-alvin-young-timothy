@@ -7,6 +7,7 @@ int MODE = DEFAULT;
 PImage img1;
 PImage img2;
 PImage modified;
+PImage modifiedAlpha;
 PImage alphaPic;
 
 void setup() {
@@ -46,7 +47,7 @@ boolean isXOR(PImage img1, PImage img2, PImage modified) {
   return true;
 }
 
-int[] messageArr(PImage img, String message) {
+int[] messageArr(PImage img, String message) { // generalized function if I want to encode a decipherable text message in the alpha channel
   int[] arr = new int[message.length() * 4];
       int count = 0;
     for(int index = 0; index < message.length(); index++) {
@@ -105,6 +106,19 @@ int[] messageArr(PImage img, String message) {
 //    }
 //    img.updatePixels();
 //}
+
+void alphaEncode(int plane) {
+  for(int index = 0; index < alphaPic.pixels.length; index++) {
+    int c = alphaPic.pixels[i];
+    int a = (int)alpha(color);
+    int r = (int)red(color);
+    int g = (int)green(color);
+    int b = (int)blue(color);
+    if ( a == 255 && r == 255 && g == 255 && b == 255) {
+      alphaPic.
+    }
+  }
+}
 
 void keyPressed(){
   if (key == ' '){
