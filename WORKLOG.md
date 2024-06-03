@@ -27,10 +27,15 @@ CW: added save file to stego xor function and tested inverted image with stegsol
 
 HW: ran more tests with green and blue, started working on plane ranges
 
-### 2024-05-29
+### 2024-05-30
 CW: got plane encoding working for any plane and color, cleaned up code
 
 HW: tested out more with the random planes and did more research on the doc, cleaned up the rgb plane encoders
+
+### 2024-05-31
+CW: out of class for trip
+
+HW: started working on regular image encode, got encryption working with a pic of nyc on green plane 0
 
 ## GROUP MEMBER 2: Timothy Young
 
