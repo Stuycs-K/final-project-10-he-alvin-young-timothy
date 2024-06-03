@@ -37,6 +37,11 @@ CW: out of class for trip
 
 HW: started working on regular image encode, got encryption working with a pic of nyc on green plane 0
 
+### 2024-06-03
+CW: got regular image encode working but tints the modified image a bit, need to fix so looks identical to original
+
+HW:
+
 ## GROUP MEMBER 2: Timothy Young
 
 ### 2024-05-22

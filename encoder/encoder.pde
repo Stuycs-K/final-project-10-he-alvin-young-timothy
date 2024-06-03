@@ -9,7 +9,7 @@ int FILL = 1;
 
 int MODE = ENCODE;
 int COLOR = RED;
-int PLANE = 3;
+int PLANE = 7;
 int BACKGROUND = FILL;
 
 void setup() {
@@ -61,7 +61,7 @@ void setup() {
     }
     else if (BACKGROUND == FILL){
       img2 = loadImage("nyc.png");
-      fill(0, 255, 0); //turns text to blue (or desired) color
+      fill(19,66,215); //turns text to blue (or desired) color
       textSize(50);
       textAlign(CENTER, CENTER);
       text("THIS SHOULD BE GREEN", width/2, height/2);
@@ -77,14 +77,28 @@ void setup() {
         int r2 = (int)red(c2);
         int g2 = (int)green(c2);
         int b2 = (int)blue(c2);
-        if (g2 == 255){
-          if (g % 2 == 0){
-            g++;
+        if (COLOR == RED){
+          if (r2 == 255 && (r2&(int)Math.pow(2,PLANE)) == 0){
+            r += (int)Math.pow(2,PLANE);
+          }
+          if ((r2&(int)Math.pow(2,PLANE)) != 0){
+            r -= (int)Math.pow(2,PLANE);  
           }
         }
-        else{
-          if (g % 2 != 0){
-            g++;
+        else if (COLOR == GREEN){
+          if (g2 == 255 && (g2&(int)Math.pow(2,PLANE)) == 0){
+            g += (int)Math.pow(2,PLANE);
+          }
+          else if ((g2&(int)Math.pow(2,PLANE)) != 0){
+            g -= (int)Math.pow(2,PLANE);  
+          }
+        }
+        else if (COLOR == BLUE){
+          if (b2 == 255 && (b2&(int)Math.pow(2,PLANE)) == 0){
+            b += (int)Math.pow(2,PLANE);
+          }
+          else if ((b2&(int)Math.pow(2,PLANE)) != 0){
+            b -= (int)Math.pow(2,PLANE);  
           }
         }
         img.pixels[i] = color(r,g,b);
@@ -97,5 +111,6 @@ void setup() {
 void draw() {
   image(img, 0, 0);
   save("modified.png");
+    image(img2, 0, 0);
   noLoop();
 }
