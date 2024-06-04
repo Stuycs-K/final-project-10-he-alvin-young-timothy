@@ -40,7 +40,7 @@ HW: started working on regular image encode, got encryption working with a pic o
 ### 2024-06-03
 CW: got regular image encode working but tints the modified image a bit, need to fix so looks identical to original
 
-HW:
+HW: fixed message hiding, worked on processing image displays, tested more color messages
 
 ## GROUP MEMBER 2: Timothy Young
 
