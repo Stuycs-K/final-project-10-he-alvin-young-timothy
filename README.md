@@ -7,4 +7,24 @@ Period 10
 
 ## Overview
 
+### Steganography: A Brief History
+
+Steganography, the art of hiding messages within mediums, also known as 
+
+### Color Planes and Differences between ARGB Planes
+
+
+
+### XOR 
+
+### Encryption Technique (Uing LSB and XOR)
+
+### Hiding Images Within A Full Image
+
 ## Instructions
+
+### Code Compilation and Makefile Usage
+
+### TryHackMe Room Implementation
+
+
