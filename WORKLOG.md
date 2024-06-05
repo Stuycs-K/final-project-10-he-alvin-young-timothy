@@ -71,6 +71,8 @@ HW: Tested xor implementation with different images/blank PImages, researched fu
 ### 2024-05-30
 CW + HW: Tested random color filter mode on stegsolve to see if there was a way to isolate messages that only appeared on those channels, or to prevent text meant for red, green, blue or alpha from appearing in the filter.
 
-
+### 2024-06-04
+CW: Started Google Slides for presentation, and worked on skeleton for README 
+HW: Did research about steganography's history and planes and continued to work on readme writeup. Created image folder in personal computer to keep track of possible useful images for the README presentation, will upload when complete. Continued testing random color planes
 
 info
