@@ -42,11 +42,18 @@ CW: got regular image encode working but tints the modified image a bit, need to
 
 HW: fixed message hiding, worked on processing image displays, tested more color messages
 
+### 2024-06-05
+CW: incorporated XOR (image inversion) into the encoder file, cleaned up code, tested higher plane encoding
+
+
+
 ## GROUP MEMBER 2: Timothy Young
 
 ### 2024-05-22
 CW: https://docs.google.com/document/d/1Ri0hZbu2rtx6ZwQ28m5dbygn8d74uzrXJdrPIha-EJ0/edit?usp=sharing
+
 HW:
+
 ### 2024-05-23
 CW: Brainstormed more encode ideas, delved deeper into how we would implement our suggested ideas, listing pros and cons of each method.
 
