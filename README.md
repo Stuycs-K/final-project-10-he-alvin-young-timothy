@@ -30,25 +30,31 @@ Alpha, on the other hand,
 XOR, or exclusive OR, works exceptionally well in binary situations. Binary operates in base 2, using only zeroes and ones. By looking and comparing each place of our original binary and a encoding binary, XOR will return 1 if the two values differ(0 and 1), and false if the two values are the same (0,0) or (1,1). 
 
 //Insert XOR Example HERE:
-Take, for instance, this binary sequence
+Take, for instance, this binary sequence, which will be our "key".
 
 Now, if we xor it with the message string:
-
+```010101010101011101010```
 
 
 Here they are side by side: 
+```01010101010111101010```
+```010101010101011101010```
 
 We get:
 
+And the best part is that applying the xor method to the encoded string and the key once more reveals the message!
+However, xor has multiple applications. In the photography industry, xor results in a photo negative! In our scenario, we use xor on an original image and a image with text to detect hidden portions within 
 
 ## Encryption Technique (Using LSB and XOR)
-For our encoder, we masked text into specific bits of an image so that the text will only be visible through Stegsolve planes. To do so, we masked an image with the same image with text to produce an image that looks nearly identical to the original. To encode text so that they can be viewed only on specific planes, we altered the bits of a pixel's color channel to turn on and off specific planes. Since the least significant bit is the rightmost bit, as the planes increase, the more visibily different the encoded image will be. If each pixel has a color channel value between 0 and 255 produced from the 8 bits, the most significant bit (the right most bit) will account for half of the color sharpness.
+
+For our encoder, we masked text into specific bits of an image so that the text is only visible through Stegsolve planes. To do so, we masked an image with the same image with text to produce an image that looks nearly identical to the original. In order to encode text so that they can be viewed only on specific planes, we altered the bits of a pixel's color channel to turn on and off for specific planes. Since the least significant bit is the rightmost bit, as the planes increase, the more visibly different the encoded image will be. If each pixel has a color channel value between 0 and 255 produced from the 8 bits, the most significant bit (the right most bit) will account for half of the color sharpness.
 
 ## Hiding Images Within A Full Image
 
 ## Instructions
 
-## Code Compilation and Makefile Usage
+Our program is comprised of an image encoder and generator, which work in conjunction to encode a message within four different color modes and seven different planes. By checking our modified images with Stegsolve, we ensured that our program worked properly in realistic situations. This involved heavy research into the ways in which Stegsolve treats and attempts to break these forms of encryptions. 
+
 
 ## TryHackMe Room Implementation
 
