@@ -34,6 +34,10 @@ Take, for instance, this binary sequence
 
 Now, if we xor it with the message string:
 
+
+
+Here they are side by side: 
+
 We get:
 
 
