@@ -1,6 +1,7 @@
 PImage original, edited, hidden;
-int ENCODE = 0;
-int DECODE = 1;
+int XOR = 0;
+int ENCODE = 1;
+int DECODE = 2;
 int RED = 0;
 int GREEN = 1;
 int BLUE = 2;
@@ -12,8 +13,8 @@ int EDITED = 1;
 int HIDDEN = 2;
 int DISPLAY = ORIGINAL;
 
-int MODE = ENCODE;
-int COLOR = RED;
+int MODE = XOR;
+int COLOR = GREEN;
 int PLANE = 3;
 int BACKGROUND = FILL;
 
@@ -45,7 +46,16 @@ void setup() {
   //    img.pixels[i] = color(0, 0, b * 255);
   //  }
   //}
-  if (MODE == ENCODE){ 
+  if (MODE == XOR){
+    for (int i = 0; i < edited.pixels.length; i++) {
+      edited.pixels[i] = color(255);
+    }
+    edited.updatePixels();
+    image(edited, 0, 0);
+    save("edited.png");
+    isXOR(original, edited, hidden);
+  }
+  else if (MODE == ENCODE){ 
     if (BACKGROUND == BLANK){
       for (int i = 0; i < original.pixels.length; i++) {
         int c = original.pixels[i];
@@ -69,7 +79,7 @@ void setup() {
       }
     }
     else if (BACKGROUND == FILL){
-      fill(230,230,250); //turns text to blue (or desired) color
+      fill(0,0,0); //turns text to desired color
       textSize(50);
       textAlign(CENTER, CENTER);
       text("hidden message!", width/2, height/2);
@@ -123,19 +133,21 @@ void draw() {
   PImage edited = loadImage("edited.png");
   PImage hidden = loadImage("hidden.png");
   textSize(50);
-  fill(0);
+  fill(255);
   String mode = "";
   if (DISPLAY == ORIGINAL) {
     mode += "original";
     image(original, 0, 0);
   } else if (DISPLAY == EDITED) {
+    if (MODE == XOR){
+      fill(0);
+    }
     mode += "edited";
     image(edited, 0, 0);
   } else if (DISPLAY == HIDDEN) {
     mode += "hidden";
     image(hidden, 0, 0);
   }
-  fill(255,255,255);
   textAlign(LEFT);
   text("mode: " + mode, 50, 50);
 }
@@ -145,14 +157,28 @@ void keyPressed() {
   DISPLAY%=3; 
 }
 
+boolean isXOR(PImage img1, PImage img2, PImage modified) {
+  if(img1.width != img2.width && img1.height != img2.height) {
+    return false;
+  }
+  else {
+  for(int index = 0; index < img1.pixels.length; index++) {
+    modified.pixels[index] = img1.pixels[index] ^ img2.pixels[index];
+    //if (img1.pixels[index] == img2.pixels[index]) 
+   }
+  }
+  modified.updatePixels();
+  return true;
+}
+
 void alphaEncode(PImage original, PImage ref, int plane) {
   for(int index = 0; index < original.pixels.length; index++) {
-    int c = original.pixels[i];
+    int c = original.pixels[index];
     int a = (int)alpha(c);
     int r = (int)red(c);
     int g = (int)green(c);
     int b = (int)blue(c);
-    int c1 = ref.pixels[i]
+    int c1 = ref.pixels[index];
     int a2 = (int)alpha(c);
     int r2 = (int)red(c);
     int g2 = (int)green(c);
