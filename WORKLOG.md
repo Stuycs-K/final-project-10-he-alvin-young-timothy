@@ -47,6 +47,8 @@ CW: incorporated XOR (image inversion) into the encoder file, cleaned up code, t
 
 HW: worked on readme and explaining the LSB and bit intereactions of our encoder and how stegsolve uses bits in its planes
 
+### 2024-06-07
+CW: did final testing with RGB, updated readme, started working on color toggle
 
 
 ## GROUP MEMBER 2: Timothy Young

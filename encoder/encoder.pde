@@ -13,7 +13,7 @@ int EDITED = 1;
 int HIDDEN = 2;
 int DISPLAY = ORIGINAL;
 
-int MODE = XOR;
+int MODE = ENCODE;
 int COLOR = GREEN;
 int PLANE = 3;
 int BACKGROUND = FILL;
@@ -135,6 +135,7 @@ void draw() {
   textSize(50);
   fill(255);
   String mode = "";
+  String colour = "";
   if (DISPLAY == ORIGINAL) {
     mode += "original";
     image(original, 0, 0);
@@ -148,13 +149,38 @@ void draw() {
     mode += "hidden";
     image(hidden, 0, 0);
   }
+  if (MODE == ENCODE){
+    if (COLOR == RED){
+      colour += "red";
+    }
+    else if (COLOR == GREEN){
+      colour += "green";
+    }
+    else if (COLOR == BLUE){
+      colour += "blue";
+    }
+    text("color: " + colour, 50, 100);
+  }
   textAlign(LEFT);
   text("mode: " + mode, 50, 50);
 }
 
 void keyPressed() {
-  DISPLAY++;
-  DISPLAY%=3; 
+  if (key == 'r' || key == 'R'){
+    COLOR = RED;
+  }
+  else if (key == 'g' || key == 'G'){
+    COLOR = GREEN;
+  }
+  else if (key == 'b' || key == 'B'){
+    COLOR = BLUE;
+  }
+  else {
+    DISPLAY++;
+    DISPLAY%=3; 
+  }
+  print(COLOR);
+  setup();
 }
 
 boolean isXOR(PImage img1, PImage img2, PImage modified) {
