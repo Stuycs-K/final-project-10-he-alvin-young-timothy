@@ -157,12 +157,15 @@ void alphaEncode(PImage original, PImage ref, int plane) {
     int r2 = (int)red(c);
     int g2 = (int)green(c);
     int b2 = (int)blue(c);
-    if (a2 != a && (a2&(int)Math.pow(2,PLANE)) == 0){
-      a += (int)Math.pow(2,PLANE);
+      if (a2 != a && (a2&(int)Math.pow(2,PLANE)) == 0){
+        a += (int)Math.pow(2,PLANE);
+      }
+      if ((a2&(int)Math.pow(2,PLANE)) != 0){
+        a -= (int)Math.pow(2,PLANE);  
+      }
+      hidden.pixels[index] = color(a,r,g,b);
     }
-    if ((a2&(int)Math.pow(2,PLANE)) != 0){
-      a -= (int)Math.pow(2,PLANE);  
-    }
-  }
-  }
+    hidden.updatePixels();
+    image(hidden, 0, 0);
+    save("hidden.png");
 }
