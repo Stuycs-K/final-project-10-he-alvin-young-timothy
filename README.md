@@ -21,7 +21,7 @@ Besides the form of LSB Steganography that we've been acquainted with.
 ### Color Planes and Differences between ARGB Planes
 We created our project using Processing, and we decided upon the PNG format because it allows for lossless conversion, ensuring that our encoded image will not lose acuity despite the number of times we encode and save our image, unlike JPEG. In Processing, images are initialized with their specific dimensions and with RGB channels(alpha channel ignored) or with ARGB(with transparency mode included). As we loop through each pixel in the pixel[] of the target image, we can access these RGB channels for each specific pixel. A color value of (0,0,0) indicates a black pixel, whereas (255,255,255) indicates white, with each value dictating how much of each primary color comprises the pixel's color. 
 
-As these values range from 0-255, it is easy to decompose them into binary in the form of 8 bits that can enumerate any value within our range. There are eight total color planes for each color, in which one is the base color, and the other 7 planes are variations. The way that the color channels work is that if the binary version of the color has a one in that place value, then that pixel will appear in said plane. 
+As these values range from 0-255, it is easy to decompose them into binary in the form of 8 bits that can enumerate any value within our range. Stegsolve uses eight total color planes for each color (r,g,b), in which one is the base color, and the other 7 planes are variations. The way that the color channels work is that if the color's nth bit from the right is equal to one, that pixel will appear as white in that specified plane. On the other hand, if the nth bit from the right is equal to zero, the pixel will appear as black on the specified plane. 
 
 Alpha, on the other hand, 
 
@@ -38,6 +38,7 @@ We get:
 
 
 ## Encryption Technique (Using LSB and XOR)
+For our encoder, we masked text into specific bits of an image so that the text will only be visible through Stegsolve planes. To do so, we masked an image with the same image with text to produce an image that looks nearly identical to the original. To encode text so that they can be viewed only on specific planes, we altered the bits of a pixel's color channel to turn on and off specific planes. Since the least significant bit is the rightmost bit, as the planes increase, the more visibily different the encoded image will be. If each pixel has a color channel value between 0 and 255 produced from the 8 bits, the most significant bit (the right most bit) will account for half of the color sharpness.
 
 ## Hiding Images Within A Full Image
 

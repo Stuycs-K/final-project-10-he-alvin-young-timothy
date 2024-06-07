@@ -45,6 +45,8 @@ HW: fixed message hiding, worked on processing image displays, tested more color
 ### 2024-06-05
 CW: incorporated XOR (image inversion) into the encoder file, cleaned up code, tested higher plane encoding
 
+HW: worked on readme and explaining the LSB and bit intereactions of our encoder and how stegsolve uses bits in its planes
+
 
 
 ## GROUP MEMBER 2: Timothy Young
