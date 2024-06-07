@@ -107,16 +107,25 @@ int[] messageArr(PImage img, String message) { // generalized function if I want
 //    img.updatePixels();
 //}
 
-void alphaEncode(int plane) {
-  for(int index = 0; index < alphaPic.pixels.length; index++) {
-    int c = alphaPic.pixels[i];
-    int a = (int)alpha(color);
-    int r = (int)red(color);
-    int g = (int)green(color);
-    int b = (int)blue(color);
-    if ( a == 255 && r == 255 && g == 255 && b == 255) {
-      alphaPic.
+void alphaEncode(PImage original, PImage ref, int plane) {
+  for(int index = 0; index < original.pixels.length; index++) {
+    int c = original.pixels[i];
+    int a = (int)alpha(c);
+    int r = (int)red(c);
+    int g = (int)green(c);
+    int b = (int)blue(c);
+    int c1 = ref.pixels[i]
+    int a2 = (int)alpha(c);
+    int r2 = (int)red(c);
+    int g2 = (int)green(c);
+    int b2 = (int)blue(c);
+    if (a2 != a && (a2&(int)Math.pow(2,PLANE)) == 0){
+      a += (int)Math.pow(2,PLANE);
     }
+    if ((a2&(int)Math.pow(2,PLANE)) != 0){
+      a -= (int)Math.pow(2,PLANE);  
+    }
+  }
   }
 }
 

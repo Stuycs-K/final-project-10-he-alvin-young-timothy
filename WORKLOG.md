@@ -82,4 +82,8 @@ CW + HW: Tested random color filter mode on stegsolve to see if there was a way 
 CW: Started Google Slides for presentation, and worked on skeleton for README 
 HW: Did research about steganography's history and planes and continued to work on readme writeup. Created image folder in personal computer to keep track of possible useful images for the README presentation, will upload when complete. Continued testing random color planes
 
-info
+
+### 2024-06-05
+CW: Worked on history section of modern digital steganography
+HW: Completed alpha method and moved it into encoder, continued to work on google slides and creating steganographied images
+
