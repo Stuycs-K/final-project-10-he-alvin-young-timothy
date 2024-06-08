@@ -8,8 +8,7 @@ PImage img1;
 PImage img2;
 PImage modified;
 PImage modifiedAlpha;
-PImage alphaPic;
-
+PImage hidden;
 void setup() {
   size(288, 180);
   img1 = loadImage("city.png");
@@ -20,15 +19,19 @@ void setup() {
   img1.loadPixels();
   img2.loadPixels();
   modified = createImage(img1.width, img1.height, RGB);
-  alphaPic = createImage(img1.width, img1.height, ARGB);
-  isXOR(img1, img2, modified);
+  hidden = createImage(img1.width, img1.height, ARGB);
+  //isXOR(img1, img2, modified);
+  alphaEncode(img1,img2, 2);
+  print("Alpha Mode");
 }
 
 
 void draw() {
     // Display the modified image
-    image(modified, 0, 0);
-    save("modified.png");
+    //image(modified, 0, 0);
+    //save("modified.png");
+    image(hidden, 0, 0);
+    save("hidden.png");
 }
 
 
@@ -107,26 +110,51 @@ int[] messageArr(PImage img, String message) { // generalized function if I want
 //    img.updatePixels();
 //}
 
+//void alphaEncode(PImage original, PImage ref, int plane) {
+//  for(int index = 0; index < original.pixels.length; index++) {
+//    int c = original.pixels[i];
+//    int a = (int)alpha(c);
+//    int r = (int)red(c);
+//    int g = (int)green(c);
+//    int b = (int)blue(c);
+//    int c1 = ref.pixels[i]
+//    int a2 = (int)alpha(c);
+//    int r2 = (int)red(c);
+//    int g2 = (int)green(c);
+//    int b2 = (int)blue(c);
+//    if (a2 != a && (a2&(int)Math.pow(2,PLANE)) == 0){
+//      a += (int)Math.pow(2,PLANE);
+//    }
+//    if ((a2&(int)Math.pow(2,PLANE)) != 0){
+//      a -= (int)Math.pow(2,PLANE);  
+//    }
+//  }
+//  }
+//}
+
 void alphaEncode(PImage original, PImage ref, int plane) {
   for(int index = 0; index < original.pixels.length; index++) {
-    int c = original.pixels[i];
+    int c = original.pixels[index];
     int a = (int)alpha(c);
     int r = (int)red(c);
     int g = (int)green(c);
     int b = (int)blue(c);
-    int c1 = ref.pixels[i]
+    int c1 = ref.pixels[index];
     int a2 = (int)alpha(c);
     int r2 = (int)red(c);
     int g2 = (int)green(c);
     int b2 = (int)blue(c);
-    if (a2 != a && (a2&(int)Math.pow(2,PLANE)) == 0){
-      a += (int)Math.pow(2,PLANE);
+      if (a2 != a && (a2&(int)Math.pow(2,plane)) == 0){
+        a += (int)Math.pow(2,plane);
+      }
+      if ((a2&(int)Math.pow(2,plane)) != 0){
+        a -= (int)Math.pow(2,plane);  
+      }
+      hidden.pixels[index] = color(a,r,g,b);
     }
-    if ((a2&(int)Math.pow(2,PLANE)) != 0){
-      a -= (int)Math.pow(2,PLANE);  
-    }
-  }
-  }
+    hidden.updatePixels();
+    image(hidden, 0, 0);
+    save("hidden.png");
 }
 
 void keyPressed(){
