@@ -13,39 +13,21 @@ int EDITED = 1;
 int HIDDEN = 2;
 int DISPLAY = ORIGINAL;
 
-int MODE = ENCODE;
-int COLOR = GREEN;
-int PLANE = 3;
+int MODE = XOR;
+int COLOR = RED;
+int PLANE = 0;
 int BACKGROUND = FILL;
 
 void setup() {
-  //size(866, 268);
-  //img = loadImage("dark.png");
-  //size(2048, 1536);
-  //img = loadImage("scribble.png");
-  //size(400, 400);
-  //img = loadImage("blue_text.png");
-  size(980, 632);
-  original = loadImage("nyc.png");
+  size(2000, 797);
+  String img = "bridge.png"; 
+  original = loadImage(img);
   image(original, 0, 0);
   save("original.png");
-  edited = loadImage("nyc.png");
-  hidden = loadImage("nyc.png");
+  edited = loadImage(img);
+  hidden = loadImage(img);
 //  image(img, 0, 0);
   loadPixels();
-  //if (MODE == DECODE){
-  //  for (int i = 0; i < img.pixels.length; i++) {
-  //    int c = img.pixels[i];
-      
-  //    // second LSB for dark.png
-  //    int r = (int)red(c);
-  //    int g = (int)red(c);
-  //    int b = ((int)blue(c) >> 1) & 0x01;
-      
-  //    // outline the blue
-  //    img.pixels[i] = color(0, 0, b * 255);
-  //  }
-  //}
   if (MODE == XOR){
     for (int i = 0; i < edited.pixels.length; i++) {
       edited.pixels[i] = color(255);
@@ -79,7 +61,7 @@ void setup() {
       }
     }
     else if (BACKGROUND == FILL){
-      fill(0,0,0); //turns text to desired color
+      fill(255); //turns text to desired color
       textSize(50);
       textAlign(CENTER, CENTER);
       text("hidden message!", width/2, height/2);
@@ -132,21 +114,21 @@ void draw() {
   PImage original = loadImage("original.png");
   PImage edited = loadImage("edited.png");
   PImage hidden = loadImage("hidden.png");
-  textSize(50);
+  textSize(40);
   fill(255);
-  String mode = "";
+  String display = "";
   String colour = "";
   if (DISPLAY == ORIGINAL) {
-    mode += "original";
+    display += "original";
     image(original, 0, 0);
   } else if (DISPLAY == EDITED) {
     if (MODE == XOR){
       fill(0);
     }
-    mode += "edited";
+    display += "edited";
     image(edited, 0, 0);
   } else if (DISPLAY == HIDDEN) {
-    mode += "hidden";
+    display += "hidden";
     image(hidden, 0, 0);
   }
   if (MODE == ENCODE){
@@ -159,10 +141,13 @@ void draw() {
     else if (COLOR == BLUE){
       colour += "blue";
     }
-    text("color: " + colour, 50, 100);
   }
   textAlign(LEFT);
-  text("mode: " + mode, 50, 50);
+  text("display: " + display, 20, 40);
+  if (MODE == ENCODE){
+    text("color: " + colour, 20, 80);
+    text("plane: " + PLANE, 20, 120);
+  }
 }
 
 void keyPressed() {
@@ -175,11 +160,14 @@ void keyPressed() {
   else if (key == 'b' || key == 'B'){
     COLOR = BLUE;
   }
-  else {
+  else if (key >= '0' && key <= '7'){
+    PLANE = (int)(key - '0');
+  }
+  else if (key == ENTER){
     DISPLAY++;
     DISPLAY%=3; 
   }
-  print(COLOR);
+//  print(COLOR);
   setup();
 }
 
