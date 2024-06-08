@@ -53,11 +53,12 @@ hidden.png is just a combination of both original.png and edited.png but with th
 
 Each pixel's color channel value ranges from 0 to 255, corresponding to 8 bits. By turning on and off these bits, we control which planes reveal the encoded information. For example, setting the rightmost bit (the least significant) to 1 would paint that pixel black on that plane in Stegsolve. If that bit were 0, it would be painted white. As the bits get more significant (from left to right), the color becomes less sharp and the image becomes more visually distorted.
 
-Example: a pixel with bits:
-```00000001``` would only appear on plane 0
-```00000100``` would only appear on plane 2
-```00101010``` would appear on planes 1,3,5
-```11111111``` would show up on all planes
+Example: a pixel with bits: <br/>
+
+```00000001``` would only appear on plane 0 <br/>
+```00000100``` would only appear on plane 2 <br/>
+```00101010``` would appear on planes 1,3,5 <br/>
+```11111111``` would show up on all planes <br/>
 
 
 ## Hiding Images Within A Full Image
