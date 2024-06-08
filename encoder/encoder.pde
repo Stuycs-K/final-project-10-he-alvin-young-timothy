@@ -21,6 +21,7 @@ int MODE = ENCODE;
 int COLOR = RED;
 int PLANE = 0;
 int BACKGROUND = FILL;
+String MESSAGE = "new hidden message!";
 
 void setup() {
   //size(400,400);
@@ -86,7 +87,7 @@ void encodeFill(PImage original, PImage edited, PImage hidden){
   fill(255); //turns text to desired color
   textSize(50);
   textAlign(CENTER, CENTER);
-  text("hidden message!", width/2, height/2);
+  text(MESSAGE, width/2, height/2);
   edited = get(); // returns the entire image 
   image(edited, 0, 0);
   save("edited.png");
