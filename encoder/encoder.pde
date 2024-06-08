@@ -1,10 +1,13 @@
 PImage original, edited, hidden;
+
 int XOR = 0;
 int ENCODE = 1;
 int DECODE = 2;
+
 int RED = 0;
 int GREEN = 1;
 int BLUE = 2;
+
 int BLANK = 0;
 int FILL = 1;
 
@@ -13,22 +16,25 @@ int EDITED = 1;
 int HIDDEN = 2;
 int DISPLAY = ORIGINAL;
 
-int MODE = XOR;
+int MODE = ENCODE;
 int COLOR = RED;
 int PLANE = 0;
-int BACKGROUND = FILL;
+int BACKGROUND = BLANK;
 
 void setup() {
-  size(2000, 797);
-  String img = "bridge.png"; 
+  size(400,400);
+  String img = "blue_text.png"; 
+  //size(2000, 797);
+  //String img = "bridge.png"; 
   original = loadImage(img);
   image(original, 0, 0);
   save("original.png");
-  edited = loadImage(img);
-  hidden = loadImage(img);
-//  image(img, 0, 0);
-  loadPixels();
+  edited = createImage(original.width, original.height, ARGB);
+  hidden = createImage(original.width, original.height, ARGB);
+  // loadPixels();
+  
   if (MODE == XOR){
+    edited.loadPixels();
     for (int i = 0; i < edited.pixels.length; i++) {
       edited.pixels[i] = color(255);
     }
@@ -39,26 +45,7 @@ void setup() {
   }
   else if (MODE == ENCODE){ 
     if (BACKGROUND == BLANK){
-      for (int i = 0; i < original.pixels.length; i++) {
-        int c = original.pixels[i];
-        int r = (int)red(c);
-        int g = (int)green(c);
-        int b = (int)blue(c);
-        if (r == 255 && g == 255 && b == 255) { // if all the r,g,b values = 255(white), then turn the pixel black
-          hidden.pixels[i] = color(0);
-        } 
-        else {// the color plane indicates which binary place should be on, so we take the expt of it
-          if (COLOR == RED){ //red mode: if the pixel is not completely white, encode it red
-            hidden.pixels[i] = color((int)Math.pow(2,PLANE), 0, 0);
-          }
-          else if (COLOR == GREEN){// green mode: if the pixel is not completely white, encode it green
-            hidden.pixels[i] = color(0, (int)Math.pow(2,PLANE), 0);
-          }
-          else if (COLOR == BLUE){// blue mode: if the pixel is not completely white, encode it blue
-            hidden.pixels[i] = color(0, 0, (int)Math.pow(2,PLANE));
-          }
-        }
-      }
+      encodeImage(original,hidden);
     }
     else if (BACKGROUND == FILL){
       fill(255); //turns text to desired color
@@ -110,6 +97,31 @@ void setup() {
   save("hidden.png");
 }
 
+void encodeImage(PImage original, PImage hidden){
+  hidden.loadPixels();
+  for (int i = 0; i < original.pixels.length; i++){
+    int c = original.pixels[i];
+    int r = (int)red(c);
+    int g = (int)green(c);
+    int b = (int)blue(c);
+    if (r == 255 && g == 255 && b == 255) { // if all the r,g,b values = 255(white), then turn the pixel black
+      hidden.pixels[i] = color(0);
+    } 
+    else {// the color plane indicates which binary place should be on, so we take the expt of it
+      if (COLOR == RED){ //red mode: if the pixel is not completely white, encode it red
+        hidden.pixels[i] = color((int)Math.pow(2,PLANE), 0, 0);
+      }
+      else if (COLOR == GREEN){// green mode: if the pixel is not completely white, encode it green
+        hidden.pixels[i] = color(0, (int)Math.pow(2,PLANE), 0);
+      }
+      else if (COLOR == BLUE){// blue mode: if the pixel is not completely white, encode it blue
+        hidden.pixels[i] = color(0, 0, (int)Math.pow(2,PLANE));
+      }
+    }
+  }
+  hidden.updatePixels();
+}
+
 void draw() {
   PImage original = loadImage("original.png");
   PImage edited = loadImage("edited.png");
@@ -118,6 +130,10 @@ void draw() {
   fill(255);
   String display = "";
   String colour = "";
+  if (BACKGROUND == BLANK && MODE == ENCODE){
+    fill(150);
+    edited = original;
+  }
   if (DISPLAY == ORIGINAL) {
     display += "original";
     image(original, 0, 0);
