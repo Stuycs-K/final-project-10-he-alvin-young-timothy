@@ -21,13 +21,17 @@ int MODE = ENCODE;
 int COLOR = RED;
 int PLANE = 0;
 int BACKGROUND = FILL;
-String MESSAGE = "new hidden message!";
+String MESSAGE = "Johannes Vermeer (1665)";
 
 void setup() {
-  //size(400,400);
-  //String img = "blue_text.png"; 
-  size(2000, 797);
-  String img = "bridge.png"; 
+  size(800, 947);
+  String img;
+  if (BACKGROUND == BLANK){
+    img = "generated.png";
+  }
+  else{
+    img = "pearl.png"; 
+  }
   original = loadImage(img);
   image(original, 0, 0);
   save("original.png");
@@ -148,6 +152,7 @@ void draw() {
   String display = "";
   String colour = "";
   String mode = "";
+  String background = "";
   if (BACKGROUND == BLANK && MODE == ENCODE){
     fill(150);
     edited = original;
@@ -179,6 +184,12 @@ void draw() {
     else if (COLOR == ALPH){
       colour += "alpha";
     }
+    if (BACKGROUND == BLANK){
+      mode += " (fill)";
+    }
+    else {
+      mode += " (blank)";
+    }
   }
   else {
     mode += "xor";
@@ -204,6 +215,10 @@ void keyPressed() {
   }
   else if (key == 'a' || key == 'A'){
     COLOR = ALPH;
+  }
+  else if (key == 'f' || key == 'F'){
+    BACKGROUND ++;
+    BACKGROUND %= 2;
   }
   else if (key == 'x' || key == 'X'){
     MODE ++;
