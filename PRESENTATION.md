@@ -4,7 +4,7 @@
 
 Although cryptography and encryptions have been around since medieval times, steganography takes a different approach to this idea of encoded messages by making the hidden message itself discreet. Although encryption merely ensures the security of the hidden message, steganography relies more upon the theory of hiding in plain sent, obscuring the fact that the message itself has been sent by the human brain's amazing ability to filter seemingly irrelevant information. The term steganography, or the art of hiding messages within mediums in plain sight, was first used in 1499 by German abbot Johannes Trithemius, the father of cryptography and steganography. In his Steganographia, he detailed these principles using shopping lists and letters as ruses to cover the messages written in invisible ink between the margins. 
 
-However, Kurak and McHugh are the first to propose the idea of digital steganography. With the turn of the digital age, they argued that three main factors set steganography apart; it's ability to remain undetected, robustness(resistance to decryption through various image processing techniques), and capacity of message. They experimented with image downgrading and image contamination, quite resembling our LSB encryption lab in Processing!
+However, Kurak and McHugh are the first to propose the idea of digital steganography. With the turn of the digital age, they argued that three main factors set steganography apart; its ability to remain undetected, robustness(resistance to decryption through various image processing techniques), and capacity of message. They experimented with image downgrading and image contamination, quite resembling our LSB encryption lab in Processing!
 
 Steganography Applications:
 
@@ -24,24 +24,25 @@ XOR, or exclusive OR, works exceptionally well in binary situations. Binary oper
 
 //Insert XOR Example HERE:
 Take, for instance, this binary sequence, which will be our "key".
+```01010111010111101010```
 
-Now, if we xor it with the message string:
-```010101010101011101010```
-
+Let's say this is the message we want to encode:
+```01110100010101110111```
 
 Here they are side by side: 
-```01010101010111101010```
-```010101010101011101010```
+```01010111010111101010```
+```01110100010101110111```
 
-We get:
+When we xor them together, we get:
+```00100011000010011101```
 
 And the best part is that applying the xor method to the encoded string and the key once more reveals the message!
-However, xor has multiple applications. In the photography industry, xor results in a photo negative! In our scenario, we use xor on an original image and a image with text to detect hidden portions within 
+However, xor has multiple applications. In the photography industry, xor results in a photo negative! In our scenario, we use xor on an original image and an image with text to detect hidden portions within 
 
 ## Encryption Technique (Using LSB and XOR)
 
 For our encoder, we masked text into specific bits of an image so that the text is only visible through Stegsolve planes. 
-To mask text into an image, he encoder pastes text onto an image and saves it as edited.png and then compares that image to the original to produce hidden.png. 
+To mask text into an image, the encoder pastes text onto an image and saves it as edited.png and then compares that image to the original to produce hidden.png. 
 hidden.png is just a combination of both original.png and edited.png but with the different pixels between the two slightly altered into the original through bit operations.
 
 Each pixel's color channel value ranges from 0 to 255, corresponding to 8 bits. By turning on and off these bits, we control which planes reveal the encoded information. For example, setting the rightmost bit (the least significant) to 1 would paint that pixel black on that plane in Stegsolve. If that bit were 0, it would be painted white. As the bits get more significant (from left to right), the color becomes less sharp and the image becomes more visually distorted.
@@ -60,14 +61,14 @@ Example: a pixel with bits: <br/>
 
 Our program is comprised of an image encoder and generator, which work in conjunction to encode a message within four different color modes and seven different planes. By checking our modified images with Stegsolve, we ensured that our program worked properly in realistic situations. This involved heavy research into the ways in which Stegsolve treats and attempts to break these forms of encryptions. 
 
-Before running anything, make sure you have Stegsolve installed (get it using this link: https://wiki.bi0s.in/steganography/stegsolve/) in a location you can access
+Before running anything, make sure you have Stegsolve installed (get it [here](https://wiki.bi0s.in/steganography/stegsolve/)) in a location you can access
 - to run stegsolve, open the terminal and navigate to the directory where Stegsolve is installed in
-- then run java -jar Stegsolve.jar and open teh image in the popped up
+- then run ```java -jar Stegsolve.jar``` and open the image in the pop up interface
 
 Generator: after running, a 400x400 blank white image with text on top is produced
 
 Encoder: after inserting the image and the text to hide in the image, run to get original.png (the original image), edited.png (the original image with text on top), and hidden.png (the original image with the text hidden in pixels)
-- pressing the key x changes the mode between ENCODE (hides text in the image)and XOR (inverts the image)
+- pressing the key x changes the mode between ENCODE (hides text in the image) and XOR (inverts the image)
 - pressing the keys r, g, b, or a changes the plane color (between RED, GREEN, BLUE, and ALPHA respectively) being encoded and the hidden.png being produced
 - pressing the keys 0 through 7 changes the plane number being 
 - pressing ENTER changes the displayed image between origianl.png, edited.png, and hidden.png
