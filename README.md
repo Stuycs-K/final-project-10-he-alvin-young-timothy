@@ -47,7 +47,18 @@ However, xor has multiple applications. In the photography industry, xor results
 
 ## Encryption Technique (Using LSB and XOR)
 
-For our encoder, we masked text into specific bits of an image so that the text is only visible through Stegsolve planes. To do so, we masked an image with the same image with text to produce an image that looks nearly identical to the original. In order to encode text so that they can be viewed only on specific planes, we altered the bits of a pixel's color channel to turn on and off for specific planes. Since the least significant bit is the rightmost bit, as the planes increase, the more visibly different the encoded image will be. If each pixel has a color channel value between 0 and 255 produced from the 8 bits, the most significant bit (the right most bit) will account for half of the color sharpness.
+For our encoder, we masked text into specific bits of an image so that the text is only visible through Stegsolve planes. 
+To mask text into an image, he encoder pastes text onto an image and saves it as edited.png and then compares that image to the original to produce hidden.png. 
+hidden.png is just a combination of both original.png and edited.png but with the different pixels between the two slightly altered into the original through bit operations.
+
+Each pixel's color channel value ranges from 0 to 255, corresponding to 8 bits. By turning on and off these bits, we control which planes reveal the encoded information. For example, setting the rightmost bit (the least significant) to 1 would paint that pixel black on that plane in Stegsolve. If that bit were 0, it would be painted white. As the bits get more significant (from left to right), the color becomes less sharp and the image becomes more visually distorted.
+
+Example: a pixel with bits:
+```00000001``` would only appear on plane 0
+```00000100``` would only appear on plane 2
+```00101010``` would appear on planes 1,3,5
+```11111111``` would show up on all planes
+
 
 ## Hiding Images Within A Full Image
 
