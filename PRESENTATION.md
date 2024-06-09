@@ -1,7 +1,7 @@
 ## PRESENTATION.md
 
 ## Steganography: A Brief History
-
+![Cryptography Flowchart](/../presentation/flowchart.png)
 Although cryptography and encryptions have been around since medieval times, steganography takes a different approach to this idea of encoded messages by making the hidden message itself discreet. Although encryption merely ensures the security of the hidden message, steganography relies more upon the theory of hiding in plain sent, obscuring the fact that the message itself has been sent by the human brain's amazing ability to filter seemingly irrelevant information. The term steganography, or the art of hiding messages within mediums in plain sight, was first used in 1499 by German abbot Johannes Trithemius, the father of cryptography and steganography. In his Steganographia, he detailed these principles using shopping lists and letters as ruses to cover the messages written in invisible ink between the margins. 
 
 However, Kurak and McHugh are the first to propose the idea of digital steganography. With the turn of the digital age, they argued that three main factors set steganography apart; its ability to remain undetected, robustness(resistance to decryption through various image processing techniques), and capacity of message. They experimented with image downgrading and image contamination, quite resembling our LSB encryption lab in Processing!
@@ -17,7 +17,7 @@ As these values range from 0-255, it is easy to decompose them into binary in th
 
 
 ## XOR 
-XOR, or exclusive OR, works exceptionally well in binary situations. Binary operates in base 2, using only zeroes and ones. By looking and comparing each place of our original binary and a encoding binary, XOR will return 1 if the two values differ(0 and 1), and false if the two values are the same (0,0) or (1,1). 
+XOR, or exclusive OR, works exceptionally well in binary situations. Binary operates in base 2, using only zeroes and ones. By looking and comparing each place of our original binary and an encoding binary, XOR will return 1 if the two values differ(0 and 1), and false if the two values are the same (0,0) or (1,1). 
 
 //Insert XOR Example HERE:
 Take, for instance, this binary sequence, which will be our "key".
@@ -44,22 +44,26 @@ hidden.png is just a combination of both original.png and edited.png but with th
 
 Each pixel's color channel value ranges from 0 to 255, corresponding to 8 bits. By turning on and off these bits, we control which planes reveal the encoded information. For example, setting the rightmost bit (the least significant) to 1 would paint that pixel black on that plane in Stegsolve. If that bit were 0, it would be painted white. As the bits get more significant (from left to right), the color becomes less sharp and the image becomes more visually distorted.
 
-Example: a pixel with bits: <br/>
+For example: take pixel with bits, encoded in the red plane: <br/>
 
 ```00000001``` would only appear on plane 0 <br/> `rgb(2, 0, 0)`
 ```00000100``` would only appear on plane 2 <br/> `rgb(8, 0, 0)`
 ```00101010``` would appear on planes 1,3,5 <br/> `rgb(4, 0, 0)`
 ```11111111``` would show up on all planes <br/>  `rgb(255, 0, 0)`
 
-`rgb(9, 105, 218)`
+
 
 ## Instructions
 
 Our program is comprised of an image encoder and generator, which work in conjunction to encode a message within four different color modes and seven different planes. By checking our modified images with Stegsolve, we ensured that our program worked properly in realistic situations. This involved heavy research into the ways in which Stegsolve treats and attempts to break these forms of encryptions. 
 
+<details><summary>Do you have what you need?</summary>
+  
 Before running anything, make sure you have Stegsolve installed (get it [here](https://wiki.bi0s.in/steganography/stegsolve/)) in a location you can access
 - to run stegsolve, open the terminal and navigate to the directory where Stegsolve is installed in
-- then run ```java -jar Stegsolve.jar``` and open the image in the pop up interface
+- then run ```java -jar Stegsolve.jar``` and open the image in the pop-up interface
+
+</details>
 
 Generator: after running, a 400x400 blank white image with text on top is produced
 
@@ -78,7 +82,7 @@ To recap:
 - [ ] Install stegsolve 🦖
 - [ ] Using `generator.pde`, generate your desired text upon a white background 🖋️
 - [ ] With your generated image from `encoder.pde`, create three images: the original, the edited version, and the hidden version 🖼️
-- [ ] Utilize key binds to cycle between the modes for encryption: 0-7 changes the encryption plane, and ENTER swaps between your images 🔃
+- [ ] Utilize key binds to cycle between encryption modes: 0-7 changes the encryption plane, and ENTER swaps between your images 🔃
 - [ ] Place your hidden image into stegsolve to watch your message appear before your very eyes 👀
 - [ ] Have fun! :tada:
 
