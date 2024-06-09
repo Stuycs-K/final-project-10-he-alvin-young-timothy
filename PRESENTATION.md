@@ -57,11 +57,13 @@ For example: take pixel with bits, encoded in the red plane: <br/>
 
 Our program is comprised of an image encoder and generator, which work in conjunction to encode a message within four different color modes and seven different planes. By checking our modified images with Stegsolve, we ensured that our program worked properly in realistic situations. This involved heavy research into the ways in which Stegsolve treats and attempts to break these forms of encryptions. 
 
-<details><summary>Do you have what you need?</summary>
-  
+<details><summary>It's dangerous to go alone... Take this! 🦖</summary>
+
+
 Before running anything, make sure you have Stegsolve installed (get it [here](https://wiki.bi0s.in/steganography/stegsolve/)) in a location you can access
 - to run stegsolve, open the terminal and navigate to the directory where Stegsolve is installed in
 - then run ```java -jar Stegsolve.jar``` and open the image in the pop-up interface
+
 
 </details>
 
