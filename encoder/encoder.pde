@@ -23,6 +23,8 @@ int PLANE = 0;
 int BACKGROUND = FILL;
 String MESSAGE = "Johannes Vermeer (1665)";
 
+int MARKED = 0;
+
 void setup() {
   size(800, 947);
   String img;
@@ -36,7 +38,6 @@ void setup() {
   save("original.png");
   edited = loadImage(img);
   hidden = loadImage(img);
-  
   if (MODE == XOR) {
     edited.loadPixels();
     for (int i = 0; i < edited.pixels.length; i++) {
@@ -82,11 +83,15 @@ void encodeBlank(PImage original, PImage hidden) {
 }
 
 void encodeFill(PImage original, PImage edited, PImage hidden) {
-  fill(255, 255, 255, 254); 
-  textSize(50);
-  textAlign(CENTER, CENTER);
-  text(MESSAGE, width/2, height/2);
-  edited = get(); 
+  if (MARKED == 1){
+    edited = loadImage("marked.png");
+  } else{
+    fill(0, 255, 255, 254); 
+    textSize(50);
+    textAlign(CENTER, CENTER);
+    text(MESSAGE, width/2, height/2);
+    edited = get(); 
+  }
   image(edited, 0, 0);
   save("edited.png");
   for (int i = 0; i < original.pixels.length; i++) {
@@ -172,9 +177,9 @@ void draw() {
       colour += "alpha";
     }
     if (BACKGROUND == BLANK) {
-      mode += " (fill)";
-    } else {
       mode += " (blank)";
+    } else {
+      mode += " (fill)";
     }
   } else {
     mode += "xor";
@@ -203,6 +208,9 @@ void keyPressed() {
   } else if (key == 'x' || key == 'X') {
     MODE ++;
     MODE %= 2;
+  } else if (key == 'm' || key == 'M') {
+    MARKED++;
+    MARKED %= 2; 
   } else if (key >= '0' && key <= '7') {
     PLANE = (int)(key - '0');
   } else if (key == ENTER) {
