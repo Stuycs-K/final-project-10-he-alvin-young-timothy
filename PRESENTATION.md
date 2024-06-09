@@ -7,12 +7,12 @@
   
 </p>
 
-Although cryptography and encryptions have been around since medieval times, steganography takes a different approach to this idea of encoded messages by making the hidden message itself discreet. Although encryption merely ensures the security of the hidden message, steganography relies more upon the theory of hiding in plain sent, obscuring the fact that the message itself has been sent by the human brain's amazing ability to filter seemingly irrelevant information. The term steganography, or the art of hiding messages within mediums in plain sight, was first used in 1499 by German abbot Johannes Trithemius, the father of cryptography and steganography. In his Steganographia, he detailed these principles using shopping lists and letters as ruses to cover the messages written in invisible ink between the margins. 
+Although cryptography and encryptions have been around since medieval times, steganography takes a different approach to this idea of encoded messages by making the hidden message itself discreet. Although encryption merely ensures the security of the hidden message, steganography relies more upon the theory of hiding in plain sight, obscuring the fact that the message itself has been sent. This can be attributed to the human brain's amazing ability to filter seemingly irrelevant information. The term steganography, or the art of hiding messages within mediums in plain sight, was first used in 1499 by German abbot Johannes Trithemius, the father of cryptography and steganography. In his Steganographia, he detailed these principles using shopping lists and letters as ruses to cover the messages written in invisible ink between the margins. 
 
 
 <img align="left" width="50%" src="https://github.com/Stuycs-K/final-project-10-he-alvin-young-timothy/blob/1a1856d59a202696060cba1335b394b0e9a620c3/presentation/morse.jpg">
 
-During the World Wars, these principles were key in getting messages across the battlefield. To name a few, the Germans relied on Microdots and null ciphers. Microdots, which was heavily shrunken text or photography typically in a circular format, 1 millimeter in diameter. In this way, they could hide information in a seemingly innocuous period at the end of a sentence, or in the tip of an i or j. Null ciphers hid messages in what also seemed to be innocent text. For example, the message, "Apparently neutral's protest is thoroughly discounted and ignored. Isman hard hit. Blockade issue affects pretext for embargo on by-products, ejecting suets and vegetable oils" seems to be rather mundane. And yet, taking the second letter of each word reveals the actual payload: "Pershing sails from NY June 1". In the image to the left, the expanse of grass beside the river is actually morse code, with short grass standing for dots and long grass representing lines. The message reads “Compliments of CPSA MA to our chief Col Harold R. Shaw on his visit to San Antonio May 11th 1945”.
+During the World Wars, these principles were key in getting messages across the battlefield. To name a few, the Germans relied on Microdots and null ciphers. Microdots are heavily shrunken text or photography typically in a circular format, 1 millimeter in diameter. In this way, they could hide information in a seemingly innocuous period at the end of a sentence, or in the tip of an i or j. Null ciphers hid messages in what also seemed to be innocent text. For example, the message, "Apparently neutral's protest is thoroughly discounted and ignored. Isman hard hit. Blockade issue affects pretext for embargo on by-products, ejecting suets and vegetable oils" seems to be rather mundane. And yet, taking the second letter of each word reveals the actual payload: "Pershing sails from NY June 1". In the image to the left, the expanse of grass beside the river is actually morse code, with short grass standing for dots and long grass representing lines. The message reads “Compliments of CPSA MA to our chief Col Harold R. Shaw on his visit to San Antonio May 11th 1945”.
 
 
 However, Kurak and McHugh are the first to propose the idea of digital steganography. With the turn of the digital age, they argued that three main factors set steganography apart; its ability to remain undetected, robustness(resistance to decryption through various image processing techniques), and capacity of message. They experimented with image downgrading and image contamination, quite resembling our LSB encryption lab in Processing!
@@ -63,7 +63,7 @@ For our encoder, we masked text into specific bits of an image so that the text 
 To mask text into an image, the encoder pastes text onto an image and saves it as edited.png and then compares that image to the original to produce hidden.png. 
 hidden.png is just a combination of both original.png and edited.png but with the different pixels between the two slightly altered into the original through bit operations.
 
-Each pixel's color channel value ranges from 0 to 255, corresponding to 8 bits. By turning on and off these bits, we control which planes reveal the encoded information. For example, setting the rightmost bit (the least significant) to 1 would paint that pixel black on that plane in Stegsolve. If that bit were 0, it would be painted white. As the bits get more significant (from left to right), the color becomes less sharp and the image becomes more visually distorted.
+Each pixel's color channel value ranges from 0 to 255, corresponding to 8 bits. By turning on and off these bits, we control which planes reveal the encoded information. For example, setting the rightmost bit (the least significant) to 1 would paint that pixel white on that plane in Stegsolve. If that bit were 0, it would be painted black. As the bits get more significant (from left to right), the color becomes less sharp and the image becomes more visually distorted.
 
 For example: take pixel with bits, encoded in the red plane: <br/>
 
@@ -84,7 +84,7 @@ Our program is comprised of an image encoder and generator, which work in conjun
 <br/> 
 Before running anything, make sure you have Stegsolve installed (get it [here](https://wiki.bi0s.in/steganography/stegsolve/)) in a location you can access
 - to run stegsolve, open the terminal and navigate to the directory where Stegsolve is installed in
-- then run ```java -jar Stegsolve.jar``` and open the image in the pop-up interface
+- then run java -jar Stegsolve.jar and open the image in the pop-up interface
 
 <br/> 
 </details>
