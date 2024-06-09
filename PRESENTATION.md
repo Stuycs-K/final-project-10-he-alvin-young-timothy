@@ -76,7 +76,7 @@ For example: take pixel with bits, encoded in the red plane: <br/>
 Our program is comprised of an image encoder and generator, which work in conjunction to encode a message within four different color modes and seven different planes. By checking our modified images with Stegsolve, we ensured that our program worked properly in realistic situations. This involved heavy research into the ways in which Stegsolve treats and attempts to break these forms of encryptions. 
 
 
-<details><summary>It's dangerous to go alone... Take this! 🦖</summary> 
+<details><summary>**It's dangerous to go alone... Take _this!_** 🦖</summary> 
 
 <br/> 
 Before running anything, make sure you have Stegsolve installed (get it [here](https://wiki.bi0s.in/steganography/stegsolve/)) in a location you can access
@@ -87,10 +87,15 @@ Before running anything, make sure you have Stegsolve installed (get it [here](h
 </details>
 
 <br/> 
-Generator: after running, a 400x400 blank white image with text on top is produced
+**Generator:** After running, a 400x400 blank white image with text on top is produced
 
 
-Encoder: after inserting the image and the text to hide in the image, run to get original.png (the original image), edited.png (the original image with text on top), and hidden.png (the original image with the text hidden in pixels)
+**Encoder:** After inserting the image and the text to hide in the image, run to get original.png (the original image), edited.png (the original image with text on top), and hidden.png (the original image with the text hidden in pixels)
+
+<details><summary>**Keybinds** ⌨️</summary> 
+
+<br/> 
+
 - pressing the key x changes the mode between ENCODE (hides text in the image) and XOR (inverts the image)
 - pressing the key f changes the background between BLANK (white background with text) and FILL (actual image with text)
 - pressing the key m changes the edited image from text to marks
@@ -101,6 +106,8 @@ Encoder: after inserting the image and the text to hide in the image, run to get
 
 After running the encoder, open up Stegsolve and open hidden.png and cycle through the planes until you find your hidden message!
 
+<br/> 
+</details>
 
 To recap:
 
@@ -114,5 +121,3 @@ To recap:
 Sources:
 https://www.sciencedirect.com/science/article/abs/pii/S0165168409003648
 Image Downgrading: https://www.petitcolas.net/steganography/image_downgrading/
-
-Proposed Idea: Use image steganography on some of the image we include in the README
