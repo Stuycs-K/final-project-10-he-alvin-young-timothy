@@ -98,7 +98,7 @@ Before running anything, make sure you have Stegsolve installed (get it <a href=
 **Encoder:** After inserting the image and the text to hide in the image, run to get original.png (the original image), edited.png (the original image with text on top), and hidden.png (the original image with the text hidden in pixels)
 <br/>
 
-<details><summary>**Keybinds** ⌨️</summary> 
+<details><summary><b>Keybinds</b> ⌨️</summary> 
 <br/> 
 
 - pressing the key x changes the mode between ENCODE (hides text in the image) and XOR (inverts the image)
