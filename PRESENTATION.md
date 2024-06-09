@@ -76,7 +76,7 @@ For example: take pixel with bits, encoded in the red plane: <br/>
 Our program is comprised of an image encoder and generator, which work in conjunction to encode a message within four different color modes and seven different planes. By checking our modified images with Stegsolve, we ensured that our program worked properly in realistic situations. This involved heavy research into the ways in which Stegsolve treats and attempts to break these forms of encryptions. 
 
 
-<details><summary>**It's dangerous to go alone... Take _this!_** 🦖</summary> 
+<details><summary><b>It's dangerous to go alone... Take <i>this!</i></b> 🦖</summary> 
 
 <br/> 
 Before running anything, make sure you have Stegsolve installed (get it [here](https://wiki.bi0s.in/steganography/stegsolve/)) in a location you can access
@@ -87,13 +87,15 @@ Before running anything, make sure you have Stegsolve installed (get it [here](h
 </details>
 
 <br/> 
-**Generator:** After running, a 400x400 blank white image with text on top is produced
 
+<b>Generator:</b> After running, a 400x400 blank white image with text on top is produced
+
+<br/> 
 
 **Encoder:** After inserting the image and the text to hide in the image, run to get original.png (the original image), edited.png (the original image with text on top), and hidden.png (the original image with the text hidden in pixels)
+<br/>
 
 <details><summary>**Keybinds** ⌨️</summary> 
-
 <br/> 
 
 - pressing the key x changes the mode between ENCODE (hides text in the image) and XOR (inverts the image)
@@ -105,8 +107,8 @@ Before running anything, make sure you have Stegsolve installed (get it [here](h
 
 
 After running the encoder, open up Stegsolve and open hidden.png and cycle through the planes until you find your hidden message!
-
 <br/> 
+
 </details>
 
 To recap:
