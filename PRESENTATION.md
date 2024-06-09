@@ -46,10 +46,10 @@ Each pixel's color channel value ranges from 0 to 255, corresponding to 8 bits. 
 
 Example: a pixel with bits: <br/>
 
-```00000001``` would only appear on plane 0 <br/> `rgb(2 ,0 ,0)`
-```00000100``` would only appear on plane 2 <br/> `rgb(8 ,0 ,0)`
-```00101010``` would appear on planes 1,3,5 <br/> `rgb(4 ,0 ,0)`
-```11111111``` would show up on all planes <br/>  `rgb(255 ,0 ,0)`
+```00000001``` would only appear on plane 0 <br/> `rgb(2, 0, 0)`
+```00000100``` would only appear on plane 2 <br/> `rgb(8, 0, 0)`
+```00101010``` would appear on planes 1,3,5 <br/> `rgb(4, 0, 0)`
+```11111111``` would show up on all planes <br/>  `rgb(255, 0, 0)`
 
 ## Instructions
 
