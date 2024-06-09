@@ -41,7 +41,7 @@ When we xor them together, we get:
 <br/>
 ```00100011000010011101```
 
-And the best part is that applying the xor method to the encoded string and the key once more reveals the message!
+And the best part is that applying the xor method to the encoded string and the key once more reveals the original!
 However, xor has multiple applications. In the photography industry, xor results in a photo negative! In fact, xor is one of the color filters in which a secret message can be hidden. 
 
 Before:
@@ -76,7 +76,7 @@ For example: take pixel with bits, encoded in the red plane: <br/>
 
 ## Instructions
 
-Our program is comprised of an image encoder and generator, which work in conjunction to encode a message within four different color modes and seven different planes. By checking our modified images with Stegsolve, we ensured that our program worked properly in realistic situations. This involved heavy research into the ways in which Stegsolve treats and attempts to break these forms of encryptions. 
+Our program is comprised of an image encoder and generator, which work in conjunction to encode a message within three different color modes and seven different planes. By checking our modified images with Stegsolve, we ensured that our program worked properly in realistic situations. This involved heavy research into the ways in which Stegsolve treats and attempts to break these forms of encryptions. 
 
 
 <details><summary><b>It's dangerous to go alone... Take <i>this!</i></b> 🦖</summary> 
