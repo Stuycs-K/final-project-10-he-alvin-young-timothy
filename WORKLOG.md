@@ -50,7 +50,7 @@ HW: worked on readme and explaining the LSB and bit intereactions of our encoder
 ### 2024-06-07
 CW: did final testing with RGB, updated readme, started working on color toggle
 
-HW: got color toggle and plane toggles working, optimized blank background fill and blank code, got toggle xor working, 
+HW: got color toggle and plane toggles working, optimized blank background fill and blank code, got toggle xor working, added background toggles
 
 ## GROUP MEMBER 2: Timothy Young
 
