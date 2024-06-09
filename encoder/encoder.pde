@@ -17,24 +17,24 @@ int EDITED = 1;
 int HIDDEN = 2;
 int DISPLAY = ORIGINAL;
 
-int MODE = ENCODE;
-int COLOR = RED;
-int PLANE = 0;
-int BACKGROUND = FILL;
+int MODE = XOR;
+int COLOR = ALPH;
+int PLANE = 1;
+int BACKGROUND = BLANK;
 String MESSAGE = "new hidden message!";
 
 void setup() {
   //size(400,400);
-  //String img = "blue_text.png"; 
+  String img = "blue_text.png"; 
   size(2000, 797);
-  String img = "bridge.png"; 
+  //String img = "bridge.png"; this is the one we need
   original = loadImage(img);
   image(original, 0, 0);
   save("original.png");
   //edited = createImage(original.width, original.height, ARGB);
-  //hidden = createImage(original.width, original.height, ARGB);
+  hidden = createImage(original.width, original.height, ARGB);
   edited = loadImage(img);
-  hidden = loadImage(img);
+  //hidden = loadImage(img); //uncomment this later
   // loadPixels();
   
   if (MODE == XOR){
@@ -63,6 +63,7 @@ void encodeBlank(PImage original, PImage hidden){
   hidden.loadPixels();
   for (int i = 0; i < original.pixels.length; i++){
     int c = original.pixels[i];
+    int a = (int)alpha(c);
     int r = (int)red(c);
     int g = (int)green(c);
     int b = (int)blue(c);
@@ -78,6 +79,9 @@ void encodeBlank(PImage original, PImage hidden){
       }
       else if (COLOR == BLUE){// blue mode: if the pixel is not completely white, encode it blue
         hidden.pixels[i] = color(0, 0, (int)Math.pow(2,PLANE));
+      }
+      else if (COLOR == ALPH) {
+       hidden.pixels[i] = color((int)Math.pow(2,PLANE), 0, 0, 0);  
       }
     }
   }
@@ -134,7 +138,7 @@ void encodeFill(PImage original, PImage edited, PImage hidden){
         a -= (int) Math.pow(2, PLANE);
       }
     }
-    hidden.pixels[i] = color(r,g,b,a);
+    hidden.pixels[i] = color(a,r,g,b);
   }
     hidden.updatePixels();
 }
@@ -232,6 +236,33 @@ boolean isXOR(PImage img1, PImage img2, PImage modified) {
   modified.updatePixels();
   return true;
 }
+
+
+//hopefully working version:
+//void alphaEncode(PImage original, PImage ref, int plane) {
+//  for(int index = 0; index < original.pixels.length; index++) {
+//    int c = original.pixels[index];
+//    int a = (int)alpha(c);
+//    int r = (int)red(c);
+//    int g = (int)green(c);
+//    int b = (int)blue(c);
+//    int c1 = ref.pixels[index];
+//    int a2 = (int)alpha(c);
+//    int r2 = (int)red(c);
+//    int g2 = (int)green(c);
+//    int b2 = (int)blue(c);
+//      if (a2 != a && (a2&(int)Math.pow(2,plane)) == 0){
+//        a += (int)Math.pow(2,plane);
+//      }
+//      if ((a2&(int)Math.pow(2,plane)) != 0){
+//        a -= (int)Math.pow(2,plane);  
+//      }
+//      hidden.pixels[index] = color(a,r,g,b);
+//    }
+//    hidden.updatePixels();
+//    image(hidden, 0, 0);
+//    save("hidden.png");
+//}
 
 //void alphaEncode(PImage original, PImage ref, int plane) {
 //  for(int index = 0; index < original.pixels.length; index++) {
