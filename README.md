@@ -10,9 +10,11 @@ Team Name: Young @ HEart
 Our project is a complementary image steganography encoder for Stegsolve that hides messages in specific bits of each pixel. Through bit operations, each pixel can be turned on or off for each specific plane to produce nearly identical images that has a message only viewable through Stegsolve bitplane operations.
 
 ## Presentation
-View our amazing presentation video [here!](https://drive.google.com/file/d/1CWkRL__0U2bwdmkp2FGRVww2NQc9d1rZ/view?usp=sharing)
-Our presentation file: [PRESENTATION.md](PRESENTATION.md)
-The Images we used in our PRESENTATION.md file are stored [here](presentation)
+-View our amazing presentation video [here!](https://drive.google.com/file/d/1CWkRL__0U2bwdmkp2FGRVww2NQc9d1rZ/view?usp=sharing)
+
+-Our presentation file: [PRESENTATION.md](PRESENTATION.md)
+
+-Images we used in our PRESENTATION.md file are stored [here](presentation)
 
 ## Instructions
 
