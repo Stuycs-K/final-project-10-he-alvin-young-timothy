@@ -41,6 +41,19 @@ When we xor them together, we get:
 And the best part is that applying the xor method to the encoded string and the key once more reveals the message!
 However, xor has multiple applications. In the photography industry, xor results in a photo negative! In fact, xor is one of the color filters in which a secret message can be hidden. 
 
+Before:
+<p align="center">
+  <img src="https://github.com/Stuycs-K/final-project-10-he-alvin-young-timothy/blob/00192b8bbdd07a7818a88593fe17a32537e0d635/presentation/city.png">
+    
+</p>
+
+After: 
+<p align="center">
+  <img src="https://github.com/Stuycs-K/final-project-10-he-alvin-young-timothy/blob/00192b8bbdd07a7818a88593fe17a32537e0d635/presentation/blankXOR.png">
+    
+</p>
+
+
 ## Encryption Technique (Using LSB and XOR)
 
 For our encoder, we masked text into specific bits of an image so that the text is only visible through Stegsolve planes. 
@@ -63,17 +76,17 @@ For example: take pixel with bits, encoded in the red plane: <br/>
 Our program is comprised of an image encoder and generator, which work in conjunction to encode a message within four different color modes and seven different planes. By checking our modified images with Stegsolve, we ensured that our program worked properly in realistic situations. This involved heavy research into the ways in which Stegsolve treats and attempts to break these forms of encryptions. 
 
 
-<details><summary>It's dangerous to go alone... Take this! 🦖</summary>
+<details><summary>It's dangerous to go alone... Take this! 🦖</summary> 
 
-
+<br/> 
 Before running anything, make sure you have Stegsolve installed (get it [here](https://wiki.bi0s.in/steganography/stegsolve/)) in a location you can access
 - to run stegsolve, open the terminal and navigate to the directory where Stegsolve is installed in
 - then run ```java -jar Stegsolve.jar``` and open the image in the pop-up interface
 
-
+<br/> 
 </details>
 
-
+<br/> 
 Generator: after running, a 400x400 blank white image with text on top is produced
 
 
