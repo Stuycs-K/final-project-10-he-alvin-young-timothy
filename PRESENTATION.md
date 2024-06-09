@@ -8,7 +8,6 @@ However, Kurak and McHugh are the first to propose the idea of digital steganogr
 
 Steganography Applications:
 
-Steganography Methods: GIF, JPEG, PNG
 Besides the form of LSB Steganography that we've been acquainted with.
 
 ### Color Planes and Differences between ARGB Planes
@@ -35,7 +34,7 @@ When we xor them together, we get:
 ```00100011000010011101```
 
 And the best part is that applying the xor method to the encoded string and the key once more reveals the message!
-However, xor has multiple applications. In the photography industry, xor results in a photo negative! In our scenario, we use xor on an original image and an image with text to detect hidden portions within 
+However, xor has multiple applications. In the photography industry, xor results in a photo negative! In fact, xor is one of the color filters in which a secret message can be hidden. 
 
 ## Encryption Technique (Using LSB and XOR)
 
@@ -47,10 +46,10 @@ Each pixel's color channel value ranges from 0 to 255, corresponding to 8 bits. 
 
 Example: a pixel with bits: <br/>
 
-```00000001``` would only appear on plane 0 <br/>
-```00000100``` would only appear on plane 2 <br/>
-```00101010``` would appear on planes 1,3,5 <br/>
-```11111111``` would show up on all planes <br/>
+```00000001``` would only appear on plane 0 <br/> `rgb(2,0,0)`
+```00000100``` would only appear on plane 2 <br/> `rgb(8,0,0)`
+```00101010``` would appear on planes 1,3,5 <br/> `rgb(4,0,0)`
+```11111111``` would show up on all planes <br/>  `rgb(255,0,0)`
 
 ## Instructions
 
@@ -72,7 +71,14 @@ Encoder: after inserting the image and the text to hide in the image, run to get
 
 After running the encoder, open up Stegsolve and open hidden.png and cycle through the planes until you find your hidden message!
 
-## TryHackMe Room Implementation
+To recap:
+
+- [ ] Install stegsolve 🦖
+- [ ] Using `generator.pde`, generate your desired text upon a white background 🖋️
+- [ ] With your generated image from `encoder.pde`, create three images: the original, the edited version, and the hidden version 🖼️
+- [ ] Utilize key binds to cycle between the modes for encryption: 0-7 changes the encryption plane, and ENTER swaps between your images 🔃
+- [ ] Place your hidden image into stegsolve to watch your message appear before your very eyes 👀
+- [ ] Have fun! :tada:
 
 Sources:
 https://www.sciencedirect.com/science/article/abs/pii/S0165168409003648
