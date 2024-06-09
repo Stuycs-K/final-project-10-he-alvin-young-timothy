@@ -33,7 +33,7 @@ Take, for instance, this binary sequence, which will be our "key".
 Let's say this is the message we want to encode:
 ```01110100010101110111```
 
-Here they are side by side: <<br/>
+Here they are side by side: <br/>
 ```01010111010111101010``` <br/>
 ```01110100010101110111```
 
