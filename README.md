@@ -1,13 +1,18 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/ecp4su41)
-# THIS DOCUMENT IS REQUIRED
 
 ## Group Info
-Alvin He, Timothy Young
-Period 10
+Alvin He, Timothy Young </br>
+Period 10 </br>
+Team Name: Young @ HEart
 
 ## Overview
 
 Our project is a complementary image steganography encoder for Stegsolve that hides messages in specific bits of each pixel. Through bit operations, each pixel can be turned on or off for each specific plane to produce nearly identical images that has a message only viewable through Stegsolve bitplane operations.
+
+## Presentation
+View our amazing presentation video [here!](https://drive.google.com/file/d/1CWkRL__0U2bwdmkp2FGRVww2NQc9d1rZ/view?usp=sharing)
+Our presentation file: [PRESENTATION.md](PRESENTATION.md)
+The Images we used in our PRESENTATION.md file are stored [here](presentation)
 
 ## Instructions
 
