@@ -38,6 +38,7 @@ Here they are side by side: <br/>
 ```01110100010101110111```
 
 When we xor them together, we get:
+<br/>
 ```00100011000010011101```
 
 And the best part is that applying the xor method to the encoded string and the key once more reveals the message!
