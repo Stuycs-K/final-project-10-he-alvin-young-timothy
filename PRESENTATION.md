@@ -67,9 +67,9 @@ Each pixel's color channel value ranges from 0 to 255, corresponding to 8 bits. 
 
 For example: take pixel with bits, encoded in the red plane: <br/>
 
-```00000001``` would only appear on plane 0  `rgb(2, 0, 0)`<br/> 
-```00000100``` would only appear on plane 2 `rgb(8, 0, 0)`<br/> 
-```00101010``` would appear on planes 1,3,5 `rgb(4, 0, 0)`<br/> 
+```00000001``` would only appear on plane 0  `rgb(1, 0, 0)`<br/> 
+```00000100``` would only appear on plane 2 `rgb(3, 0, 0)`<br/> 
+```00101010``` would appear on planes 1,3,5 `rgb(42, 0, 0)`<br/> 
 ```11111111``` would show up on all planes `rgb(255, 0, 0)`<br/>  
 
 
@@ -91,7 +91,7 @@ Before running anything, make sure you have Stegsolve installed (get it [here](h
 
 <br/> 
 
-<b>Generator:</b> After running, a 400x400 blank white image with text on top is produced
+<b>Generator:</b> After running, a blank white image with text on top is produced
 
 <br/> 
 
