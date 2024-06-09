@@ -81,7 +81,7 @@ Our program is comprised of an image encoder and generator, which work in conjun
 <br/> 
 Before running anything, make sure you have Stegsolve installed (get it [here](https://wiki.bi0s.in/steganography/stegsolve/)) in a location you can access
 - to run stegsolve, open the terminal and navigate to the directory where Stegsolve is installed in
-- then run ```java -jar Stegsolve.jar``` and open the image in the pop-up interface
+- then run `java -jar Stegsolve.jar` and open the image in the pop-up interface
 
 <br/> 
 </details>
