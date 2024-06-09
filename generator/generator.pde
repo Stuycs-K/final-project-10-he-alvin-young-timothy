@@ -6,12 +6,7 @@ PImage img;
 
 void setup() { //initializes a new image using RGB
   size(800, 947);
-  //if (MODE == rgb) {
-  //  img = createImage(width, height, RGB);
-  //}
-  //if (MODE == alpha) {
-    img = createImage(width, height, ARGB);
-  //}
+  img = createImage(width, height, ARGB);
   img.loadPixels();
 }
 

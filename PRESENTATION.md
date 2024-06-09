@@ -12,11 +12,9 @@ Steganography Methods: GIF, JPEG, PNG
 Besides the form of LSB Steganography that we've been acquainted with.
 
 ### Color Planes and Differences between ARGB Planes
-We created our project using Processing, and we decided upon the PNG format because it allows for lossless conversion, ensuring that our encoded image will not lose acuity despite the number of times we encode and save our image, unlike JPEG. In Processing, images are initialized with their specific dimensions and with RGB channels(alpha channel ignored) or with ARGB(with transparency mode included). As we loop through each pixel in the pixel[] of the target image, we can access these RGB channels for each specific pixel. A color value of (0,0,0) indicates a black pixel, whereas (255,255,255) indicates white, with each value dictating how much of each primary color comprises the pixel's color. 
+We created our project using Processing, and we decided upon the PNG format because it allows for lossless conversion, ensuring that our encoded image will not lose acuity despite the number of times we encode and save our image. In Processing, images are initialized with their specific dimensions and with RGB channels(alpha channel ignored) or with ARGB(with transparency mode included). As we loop through each pixel in the pixel[] of the target image, we can access these RGB channels for each specific pixel. A color value of (0,0,0) indicates a black pixel, whereas (255,255,255) indicates white, with each value dictating how much of each primary color comprises the pixel's color. 
 
 As these values range from 0-255, it is easy to decompose them into binary in the form of 8 bits that can enumerate any value within our range. Stegsolve uses eight total color planes for each color (r,g,b), in which one is the base color, and the other 7 planes are variations. The way that the color channels work is that if the color's nth bit from the right is equal to one, that pixel will appear as white in that specified plane. On the other hand, if the nth bit from the right is equal to zero, the pixel will appear as black on the specified plane. 
-
-Alpha, on the other hand, 
 
 
 ## XOR 
@@ -54,9 +52,6 @@ Example: a pixel with bits: <br/>
 ```00101010``` would appear on planes 1,3,5 <br/>
 ```11111111``` would show up on all planes <br/>
 
-
-## Hiding Images Within A Full Image
-
 ## Instructions
 
 Our program is comprised of an image encoder and generator, which work in conjunction to encode a message within four different color modes and seven different planes. By checking our modified images with Stegsolve, we ensured that our program worked properly in realistic situations. This involved heavy research into the ways in which Stegsolve treats and attempts to break these forms of encryptions. 
@@ -70,9 +65,9 @@ Generator: after running, a 400x400 blank white image with text on top is produc
 Encoder: after inserting the image and the text to hide in the image, run to get original.png (the original image), edited.png (the original image with text on top), and hidden.png (the original image with the text hidden in pixels)
 - pressing the key x changes the mode between ENCODE (hides text in the image) and XOR (inverts the image)
 - pressing the key f changes the background between BLANK (white background with text) and FILL (actual image with text)
-- pressing the keys r, g, b, or a changes the plane color (between RED, GREEN, BLUE, and ALPHA respectively) being encoded and the hidden.png being produced
+- pressing the keys r, g, or b changes the plane color (between RED, GREEN, and BLUE respectively) being encoded and the hidden.png being produced
 - pressing the keys 0 through 7 changes the plane number being 
-- pressing ENTER changes the displayed image between origianl.png, edited.png, and hidden.png
+- pressing ENTER changes the displayed image between original.png, edited.png, and hidden.png
 
 After running the encoder, open up Stegsolve and open hidden.png and cycle through the planes until you find your hidden message!
 
