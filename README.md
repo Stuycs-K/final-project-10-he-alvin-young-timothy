@@ -21,6 +21,7 @@ Generator: after running, a 400x400 blank white image with text on top is produc
 
 Encoder: after inserting the image and the text to hide in the image, run to get original.png (the original image), edited.png (the original image with text on top), and hidden.png (the original image with the text hidden in pixels)
 - pressing the key x changes the mode between ENCODE (hides text in the image)and XOR (inverts the image)
+- pressing the key f changes the background between BLANK (white background with text) and FILL (actual image with text)
 - pressing the keys r, g, b, or a changes the plane color (between RED, GREEN, BLUE, and ALPHA respectively) being encoded and the hidden.png being produced
 - pressing the keys 0 through 7 changes the plane number being 
 - pressing ENTER changes the displayed image between origianl.png, edited.png, and hidden.png
