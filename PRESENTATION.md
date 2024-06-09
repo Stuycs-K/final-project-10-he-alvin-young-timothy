@@ -3,10 +3,10 @@
 ## Steganography: A Brief History
 
 <p align="center">
-  <img src="[https://github.com/Stuycs-K/final-project-10-he-alvin-young-timothy/blob/main/presentation/flowchart.png]" alt="Cryptography Flowchart"/>
+  <img src="[https://github.com/Stuycs-K/final-project-10-he-alvin-young-timothy/blob/04d83a284da8fba8afd32121cb94d5847ace1732/presentation/flowchart.png]" alt="Cryptography Flowchart"/>
 </p>
 <!--   ![artCryptography Flowch](presentation/flowchart.png) -->
-
+https://github.com/Stuycs-K/final-project-10-he-alvin-young-timothy/blob/04d83a284da8fba8afd32121cb94d5847ace1732/presentation/flowchart.png
 
 Although cryptography and encryptions have been around since medieval times, steganography takes a different approach to this idea of encoded messages by making the hidden message itself discreet. Although encryption merely ensures the security of the hidden message, steganography relies more upon the theory of hiding in plain sent, obscuring the fact that the message itself has been sent by the human brain's amazing ability to filter seemingly irrelevant information. The term steganography, or the art of hiding messages within mediums in plain sight, was first used in 1499 by German abbot Johannes Trithemius, the father of cryptography and steganography. In his Steganographia, he detailed these principles using shopping lists and letters as ruses to cover the messages written in invisible ink between the margins. 
 
