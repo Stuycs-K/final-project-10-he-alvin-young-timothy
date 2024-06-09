@@ -30,7 +30,8 @@ void setup() {
   String img;
   if (BACKGROUND == BLANK){
     img = "generated.png";
-  } else {
+  } 
+  else {
     img = "pearl.png"; 
   }
   original = loadImage(img);
@@ -47,10 +48,12 @@ void setup() {
     image(edited, 0, 0);
     save("edited.png");
     isXOR(original, edited, hidden);
-  } else if (MODE == ENCODE) { 
+  } 
+  else if (MODE == ENCODE) { 
     if (BACKGROUND == BLANK) {
       encodeBlank(original, hidden);
-    } else if (BACKGROUND == FILL) {
+    } 
+    else if (BACKGROUND == FILL) {
       encodeFill(original, edited, hidden);
     }
   }
@@ -67,14 +70,18 @@ void encodeBlank(PImage original, PImage hidden) {
     int b = (int)blue(c);
     if (r == 255 && g == 255 && b == 255) { 
       hidden.pixels[i] = color(0, 0, 0, 255);
-    } else {
+    } 
+    else {
       if (COLOR == RED) {
         hidden.pixels[i] = color((int)Math.pow(2, PLANE), 0, 0, alpha(c));
-      } else if (COLOR == GREEN) {
+      } 
+      else if (COLOR == GREEN) {
         hidden.pixels[i] = color(0, (int)Math.pow(2, PLANE), 0, alpha(c));
-      } else if (COLOR == BLUE) {
+      } 
+      else if (COLOR == BLUE) {
         hidden.pixels[i] = color(0, 0, (int)Math.pow(2, PLANE), alpha(c));
-      } else if (COLOR == ALPH) {
+      } 
+      else if (COLOR == ALPH) {
         hidden.pixels[i] = color(0, 0, 0, (int)Math.pow(2, PLANE));
       }
     }
@@ -85,7 +92,8 @@ void encodeBlank(PImage original, PImage hidden) {
 void encodeFill(PImage original, PImage edited, PImage hidden) {
   if (MARKED == 1){
     edited = loadImage("marked.png");
-  } else{
+  } 
+  else{
     fill(0, 255, 255, 254); 
     textSize(50);
     textAlign(CENTER, CENTER);
@@ -115,22 +123,28 @@ void encodeFill(PImage original, PImage edited, PImage hidden) {
       if ((r2&(int)Math.pow(2,PLANE)) != 0) {
         r -= (int)Math.pow(2,PLANE);  
       }
-    } else if (COLOR == GREEN) {
+    } 
+    else if (COLOR == GREEN) {
       if (g2 != g && (g2&(int)Math.pow(2,PLANE)) == 0) {
         g += (int)Math.pow(2,PLANE);
-      } else if ((g2&(int)Math.pow(2,PLANE)) != 0) {
+      } 
+      else if ((g2&(int)Math.pow(2,PLANE)) != 0) {
         g -= (int)Math.pow(2,PLANE);  
       }
-    } else if (COLOR == BLUE) {
+    } 
+    else if (COLOR == BLUE) {
       if (b2 != b && (b2&(int)Math.pow(2,PLANE)) == 0) {
         b += (int)Math.pow(2,PLANE);
-      } else if ((b2&(int)Math.pow(2,PLANE)) != 0) {
+      } 
+      else if ((b2&(int)Math.pow(2,PLANE)) != 0) {
         b -= (int)Math.pow(2,PLANE);  
       }
-    } else if (COLOR == ALPH) {
+    } 
+    else if (COLOR == ALPH) {
       if (c2 != c && (a2 & (int)Math.pow(2, PLANE)) == 0) {
         a += (int)Math.pow(2, PLANE);
-      } else if ((a2 & (int)Math.pow(2, PLANE)) != 0) {
+      } 
+      else if ((a2 & (int)Math.pow(2, PLANE)) != 0) {
         a -= (int)Math.pow(2, PLANE);
       }
     }
@@ -155,13 +169,15 @@ void draw() {
   if (DISPLAY == ORIGINAL) {
     display += "original";
     image(original, 0, 0);
-  } else if (DISPLAY == EDITED) {
+  } 
+  else if (DISPLAY == EDITED) {
     if (MODE == XOR) {
       fill(0);
     }
     display += "edited";
     image(edited, 0, 0);
-  } else if (DISPLAY == HIDDEN) {
+  } 
+  else if (DISPLAY == HIDDEN) {
     display += "hidden";
     image(hidden, 0, 0);
   }
@@ -169,19 +185,24 @@ void draw() {
     mode += "encode";
     if (COLOR == RED) {
       colour += "red";
-    } else if (COLOR == GREEN) {
+    } 
+    else if (COLOR == GREEN) {
       colour += "green";
-    } else if (COLOR == BLUE) {
+    } 
+    else if (COLOR == BLUE) {
       colour += "blue";
-    } else if (COLOR == ALPH) {
+    } 
+    else if (COLOR == ALPH) {
       colour += "alpha";
     }
     if (BACKGROUND == BLANK) {
       mode += " (blank)";
-    } else {
+    } 
+    else {
       mode += " (fill)";
     }
-  } else {
+  } 
+  else {
     mode += "xor";
   }
   textAlign(LEFT);
@@ -196,24 +217,32 @@ void draw() {
 void keyPressed() {
   if (key == 'r' || key == 'R') {
     COLOR = RED;
-  } else if (key == 'g' || key == 'G') {
+  } 
+  else if (key == 'g' || key == 'G') {
     COLOR = GREEN;
-  } else if (key == 'b' || key == 'B') {
+  } 
+  else if (key == 'b' || key == 'B') {
     COLOR = BLUE;
-  } else if (key == 'a' || key == 'A') {
+  } 
+  else if (key == 'a' || key == 'A') {
     COLOR = ALPH;
-  } else if (key == 'f' || key == 'F') {
+  } 
+  else if (key == 'f' || key == 'F') {
     BACKGROUND ++;
     BACKGROUND %= 2;
-  } else if (key == 'x' || key == 'X') {
+  } 
+  else if (key == 'x' || key == 'X') {
     MODE ++;
     MODE %= 2;
-  } else if (key == 'm' || key == 'M') {
+  } 
+  else if (key == 'm' || key == 'M') {
     MARKED++;
     MARKED %= 2; 
-  } else if (key >= '0' && key <= '7') {
+  } 
+  else if (key >= '0' && key <= '7') {
     PLANE = (int)(key - '0');
-  } else if (key == ENTER) {
+  } 
+  else if (key == ENTER) {
     DISPLAY++;
     DISPLAY %= 3; 
   }
@@ -223,7 +252,8 @@ void keyPressed() {
 boolean isXOR(PImage img1, PImage img2, PImage modified) {
   if(img1.width != img2.width && img1.height != img2.height) {
     return false;
-  } else {
+  } 
+  else {
     for(int index = 0; index < img1.pixels.length; index++) {
       modified.pixels[index] = img1.pixels[index] ^ img2.pixels[index];
     }
