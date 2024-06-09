@@ -7,8 +7,9 @@
 </p>
 
 <p align="center" width="100%">
-    <img width="33%" src="https://github.com/Stuycs-K/final-project-10-he-alvin-young-            timothy/blob/04d83a284da8fba8afd32121cb94d5847ace1732/presentation/flowchart.png">
+    <img width="33%" link rel="flowchart.png" href="presentation/flowchart.png">
 </p>
+
 <!--   ![artCryptography Flowch](presentation/flowchart.png) -->
 https://github.com/Stuycs-K/final-project-10-he-alvin-young-timothy/blob/04d83a284da8fba8afd32121cb94d5847ace1732/presentation/flowchart.png
 
