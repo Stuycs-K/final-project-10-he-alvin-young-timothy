@@ -15,13 +15,8 @@ Although cryptography and encryptions have been around since medieval times, ste
 During the World Wars, these principles were key in getting messages across the battlefield. To name a few, the Germans relied on Microdots and null ciphers. Microdots, which was heavily shrunken text or photography typically in a circular format, 1 millimeter in diameter. In this way, they could hide information in a seemingly innocuous period at the end of a sentence, or in the tip of an i or j. Null ciphers hid messages in what also seemed to be innocent text. For example, the message, "Apparently neutral's protest is thoroughly discounted and ignored. Isman hard hit. Blockade issue affects pretext for embargo on by-products, ejecting suets and vegetable oils" seems to be rather mundane. And yet, taking the second letter of each word reveals the actual payload: "Pershing sails from NY June 1". In the image to the left, the expanse of grass beside the river is actually morse code, with short grass standing for dots and long grass representing lines. The message reads “Compliments of CPSA MA to our chief Col Harold R. Shaw on his visit to San Antonio May 11th 1945”.
 
 
-
-
 However, Kurak and McHugh are the first to propose the idea of digital steganography. With the turn of the digital age, they argued that three main factors set steganography apart; its ability to remain undetected, robustness(resistance to decryption through various image processing techniques), and capacity of message. They experimented with image downgrading and image contamination, quite resembling our LSB encryption lab in Processing!
 
-Steganography Applications:
-
-Besides the form of LSB Steganography that we've been acquainted with.
 
 ### Color Planes and Differences between ARGB Planes
 We created our project using Processing, and we decided upon the PNG format because it allows for lossless conversion, ensuring that our encoded image will not lose acuity despite the number of times we encode and save our image. In Processing, images are initialized with their specific dimensions and with RGB channels(alpha channel ignored) or with ARGB(with transparency mode included). As we loop through each pixel in the pixel[] of the target image, we can access these RGB channels for each specific pixel. A color value of (0,0,0) indicates a black pixel, whereas (255,255,255) indicates white, with each value dictating how much of each primary color comprises the pixel's color. 
@@ -126,7 +121,3 @@ To recap:
 - [ ] Utilize key binds to cycle between encryption modes: 0-7 changes the encryption plane, and ENTER swaps between your images 🔃
 - [ ] Place your hidden image into stegsolve to watch your message appear before your very eyes 👀
 - [ ] Have fun! :tada:
-
-Sources:
-https://www.sciencedirect.com/science/article/abs/pii/S0165168409003648
-Image Downgrading: https://www.petitcolas.net/steganography/image_downgrading/
