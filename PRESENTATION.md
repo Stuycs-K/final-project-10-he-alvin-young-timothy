@@ -82,7 +82,7 @@ Our program is comprised of an image encoder and generator, which work in conjun
 <details><summary><b>It's dangerous to go alone... Take <i>this!</i></b> 🦖</summary> 
 
 <br/> 
-Before running anything, make sure you have Stegsolve installed (get it [here](https://wiki.bi0s.in/steganography/stegsolve/)) in a location you can access
+Before running anything, make sure you have Stegsolve installed (get it <a href="https://wiki.bi0s.in/steganography/stegsolve/">here!</a>) in a location you can access
 - to run stegsolve, open the terminal and navigate to the directory where Stegsolve is installed in
 - then run java -jar Stegsolve.jar and open the image in the pop-up interface
 
