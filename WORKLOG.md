@@ -57,8 +57,6 @@ HW: got color toggle and plane toggles working, optimized blank background fill 
 ### 2024-05-22
 CW: https://docs.google.com/document/d/1Ri0hZbu2rtx6ZwQ28m5dbygn8d74uzrXJdrPIha-EJ0/edit?usp=sharing
 
-HW:
-
 ### 2024-05-23
 CW: Brainstormed more encode ideas, delved deeper into how we would implement our suggested ideas, listing pros and cons of each method.
 
@@ -92,3 +90,14 @@ HW: Did research about steganography's history and planes and continued to work 
 CW: Worked on history section of modern digital steganography
 HW: Completed alpha method and moved it into encoder, continued to work on google slides and creating steganographied images
 
+### 2024-06-07
+CW: Added to xor portion of PRESENTATION.md, including room for binary example of the operation in action.
+HW: Came up with the idea to use steganography to hide an important message within one of the images for our README/PRESENTATION, which can go to prove our point of hiding in plain sight
+
+### 2024-06-08
+HW: When testing alpha, ran into an issue where the alphaMode was editing the alpha channel, but did not appear on the alpha planes of Stegsolve regardless of what I attempted. Talked with Alvin and decided to retract that functionality after we both attempted to resolve it. 
+
+### 2024-06-09
+HW: Moved all slides content to PRESENTATION.md, and decided to solely present with PRESENTATION.md. Learned git markdown usage of dropdown menus for our stegsolve installation and keybinds section, which seemed a little too verbose. Included checklist functionality, experimented with color models for RGB() that didn't end up working, and created a folder for our images. 
+
+HTML troubleshooting for image alignment unsupported by Git Markdown (align center/left), and included WW2 examples of steganography in action with examples of Microdots and null ciphers. Updated README to include our checklist, ran through several takes for our video and included links to our Zoom recorded video in the README and relative links to the PRESENTATION.md and presentation folder storing the photos we used in our PRESENTATION.md 
